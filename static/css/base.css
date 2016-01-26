@@ -1,0 +1,51 @@
+/* applies to anything of class "example-class-selector" */
+.example-class-selector {
+	margin-top: 2em;
+}
+
+/* applies to any <p> descendants of an element of class "example-class-selector" */
+.example-class-selector p {
+	/* Colors are in hexadecimal: http://www.colorpicker.com/ */	
+	color: #CC00AA;
+}
+
+/* this style exists to make it obvious that you've successfully linked
+   the CSS to the page. feel free to remove it once the link is working. */
+body {
+     /* Since we have a fixed navbar, it covers content */
+     padding-top: 50px;
+}
+
+.navbar {
+     background-color: #F0F8FF;
+     border-color: #B0C0E0;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus,
+.nav > li > a:hover,
+.nav > li > a:focus {
+     background-color: #B0C0E0;
+}
+
+.bottom-background {
+     background-color: #F0F8FF;
+     padding-bottom : 20px;
+}
+
+.jumbotron {
+	background: none;
+}
+
+.jumbotron:after {
+     content:"";
+     background: url("../images/main_background.jpg");
+     opacity: 0.2;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     position: absolute;
+     z-index: -1;	
+}
