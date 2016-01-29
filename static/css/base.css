@@ -1,21 +1,36 @@
-/* applies to anything of class "example-class-selector" */
-.example-class-selector {
-	margin-top: 2em;
-}
 
-/* applies to any <p> descendants of an element of class "example-class-selector" */
-.example-class-selector p {
-	/* Colors are in hexadecimal: http://www.colorpicker.com/ */	
-	color: #CC00AA;
-}
-
-/* this style exists to make it obvious that you've successfully linked
-   the CSS to the page. feel free to remove it once the link is working. */
 body {
      /* Since we have a fixed navbar, it covers content */
      padding-top: 50px;
 }
 
+.navbar-brand-centered {
+     position: absolute;
+     left: 50%;
+     display: block;
+     width: 160px;
+     text-align: center;
+     background-color: transparent;
+}
+
+.navbar > .container .navbar-brand-centered,
+.navbar > .container-fluid .navbar-brand-centered {
+     margin-left: -80px;
+}
+
+.donation_block, .donation_block:link, .donation_block:hover, .donation_block:visited, .donation_block:active{
+     height: 120px;
+     color: black;
+     text-decoration: none;
+}
+
+.donation_block_cost {
+     position: absolute;
+     bottom: 15px;
+     right: 20px;
+}
+
+/*
 .navbar {
      background-color: #F0F8FF;
      border-color: #B0C0E0;
@@ -33,19 +48,7 @@ body {
      background-color: #F0F8FF;
      padding-bottom : 20px;
 }
-
+*/
 .jumbotron {
-	background: none;
-}
-
-.jumbotron:after {
-     content:"";
-     background: url("../images/main_background.jpg");
-     opacity: 0.2;
-     top: 0;
-     left: 0;
-     bottom: 0;
-     right: 0;
-     position: absolute;
-     z-index: -1;	
+	/*background: none;*/
 }

@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>HCI Project Portfolio</title>	
+	<title>Charity App</title>	
 	<meta charset="utf-8">
 	<!-- To ensure proper rendering and touch zooming (mobile)-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 	<link href="css/boostrap-theme.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
-	<link href="css/introHCI.css" rel="stylesheet">
+	<link href="css/base.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,22 +36,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Project Portfolio</a>
+				<a class="navbar-brand navbar-brand-centered" href="index.html">Home</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">Home</a></li>
-					<!--<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>-->
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="scoriq.html">ScorIQ</a></li>
-							<li role="separator" class="divider"></li>
-							<li class="dropdown-header">School Projects</li>
-							<li><a href="cse167.html">CSE 167: Star Fox Toon</a></li>
-						</ul>
-					</li>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">My Profile</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Charities List</a></li>
+					<li><a href="#">Logout</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -59,41 +51,101 @@
 
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Andres Santana <small>A99420007</small></h1>
-      		<p>Andres is a senior majoring in Computer Science at UC San Diego. Current focus is in mobile and web application development.</p>
-      		<p><em>"The key to success is being prepared for when the opportunity comes." - Anonymous</em></p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4>You've saved:</h4>
+
+					<center><h1>$10.00</h1></center>
+
+				</div>
+				<div class="panel-footer"><center>Over 10 days</center></div>
+			</div>
 		</div>
 	</div>
 
 	<div class="bottom-background">
 		<div class="container">
-			<div class="page-header">
-				<h1>Projects</h1>
-			</div>
 			<div class="row">
-				<div class="col-md-3">
-					<img src="images/scoriq_logo.png" class="img-thumbnail" alt="Logo for ScorIQ mobile app.">
-				</div>
-				<div class="col-md-9">
-					<h3><a href="scoriq.html">ScorIQ</a></h3>
-					<p>Built, with a friend, a sports forecasting social mobile app named ScorIQ. ScorIQ began as a test experiment to learn Objective-C; however, it quickly became a real app with real users and we ended up learning much more than just how to make mobile apps. We learned how to build a product and a brand.</p>
+				<div class="col-xs-12">
+					<div class="btn-group btn-group-justified" role="group" aria-label="...">
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-default active" id="btn_group_money">Money</button>
+						</div>
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-default" id="btn_group_days">Days</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			
 			<!-- Divider 
 			<hr></hr> -->
 			
-			<div class="page-header">
-				<h4>School Projects</h4>
-			</div>
+			<br/>
+			<h4>You currently can donate to ...</h4>
 
 			<div class="row">
-				<div class="col-md-3">
-					<img src="images/cse167_normal.png" class="img-thumbnail" alt="Logo for ScorIQ mobile app.">
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+
+					</a>
 				</div>
-				<div class="col-md-9">
-					<h3><a href="cse167.html">CSE 167 : Star Fox Toon</a></h3>
-					<p>For the final project of CSE 167 (Computer Graphics), this is a simple version of Star Fox 64 training demo with the ability to change to a Toon version of the same space.</p>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+					</a>
+				</div>
+			</div>
+
+			<h4 id="until_you_can_label">$5 until you can donate to ...</h4>
+
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block">
+						<p><strong>SAVE</strong> 3 puppies from the streets.</p>
+
+						<h5 class="donation_block_cost">with $3.00</h5>
+					</a>
 				</div>
 			</div>
 	  	</div>
@@ -103,5 +155,8 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Our custom js -->
+	<script src="js/index.js"></script>
 </body>
 </html>
