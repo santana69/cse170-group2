@@ -24,6 +24,10 @@ body {
      text-decoration: none;
 }
 
+.donation_block_disabled {
+     background-color: lightgray;
+}
+
 .donation_block_cost {
      position: absolute;
      bottom: 15px;
