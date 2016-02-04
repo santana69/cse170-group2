@@ -2,6 +2,7 @@
 body {
      /* Since we have a fixed navbar, it covers content */
      padding-top: 50px;
+     padding-bottom: 60px;
 }
 
 .navbar-brand-centered {
@@ -19,7 +20,7 @@ body {
 }
 
 .donation_block, .donation_block:link, .donation_block:hover, .donation_block:visited, .donation_block:active{
-     height: 120px;
+     /*height: 120px;*/
      color: black;
      text-decoration: none;
 }
@@ -30,9 +31,29 @@ body {
 
 .donation_block_cost {
      position: absolute;
-     bottom: 15px;
+     /*bottom: 15px;*/
      right: 20px;
 }
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  /*height: 60px;*/
+  background-color: #f5f5f5;
+}
+
+.my-nav-footer-btn {
+     font-size: 30px;
+     padding-top: 10px;
+     padding-bottom: 5px;
+     border-radius: 0px;
+}
+
+.my-progress-bar {
+     margin-bottom: 10px;
+}
+
 
 /*
 .navbar {
