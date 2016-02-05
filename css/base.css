@@ -19,20 +19,54 @@ body {
      margin-left: -80px;
 }
 
+/**** DONATION BLOCK TEXT ****/
 .donation_block, .donation_block:link, .donation_block:hover, .donation_block:visited, .donation_block:active{
      /*height: 120px;*/
      color: black;
      text-decoration: none;
 }
 
-.donation_block_disabled {
+/*.donation_block_disabled {
      background-color: lightgray;
+}*/
+
+.causes-cost {
+     position: absolute;
+     bottom: 100px;
+     right: 20px;
+     text-align: right;
 }
 
-.donation_block_cost {
-     position: absolute;
-     /*bottom: 15px;*/
-     right: 20px;
+.donation-rate {
+     margin-top: -3px;
+     margin-bottom: -13px;
+     text-align: center;
+     height: 50px;
+}
+
+.more-info {
+     font-style: italic;
+     font-size: 12px;
+
+}
+
+.more-info-icon {
+     font-size: 8px;
+}
+
+.my-causes-body {
+     height: 125px;
+}
+
+.empty-cause {
+     height: 162px;
+     text-align: center;
+     padding-top: 30px;
+}
+
+.empty-cause-icon {
+     font-size: 3rem;
+     color: #a6a6a6;
 }
 
 .footer {
