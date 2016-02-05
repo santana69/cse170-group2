@@ -1,0 +1,26 @@
+
+.causes-cost {
+     position: absolute;
+     bottom: 81px;
+     right: 20px;
+     text-align: right;
+}
+
+.more-info {
+     font-style: italic;
+     font-size: 12px;
+
+}
+
+.more-info-icon {
+     font-size: 8px;
+}
+
+.causes-body {
+     height: 125px;
+}
+
+.causes-body:hover {
+     cursor: pointer;
+     border: 1px solid lightblue;
+}

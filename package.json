@@ -1,0 +1,23 @@
+{
+  "name": "CharityApp",
+  "version": "0.0.1",
+  "author": "Andres Santana, Lynn Hao, Grant Chinn",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santana69/cse170-group2"
+  },
+  "license": "MIT",
+
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "express3-handlebars": "*"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }  
+}

@@ -1,0 +1,53 @@
+	<div id="footer-wrapper">
+  		<div class="footer navbar-fixed-bottom">
+  			<div class="container-fluid">
+  				<div class="btn-group btn-group-justified" role="group" aria-label="...">
+					<div class="btn-group" role="group">
+						<a 
+							type="button" 
+							class="my-nav-footer-btn btn btn-lg btn-default {{#if page_home}} active {{/if}}" 
+							{{#unless page_home}} href="/" {{/unless}}
+						>
+							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+						</a>
+					</div>
+					<div class="btn-group" role="group">
+						<a 
+							type="button" 
+							class="my-nav-footer-btn btn btn-lg btn-default {{#if page_saved_causes}} active{{/if}}" 
+							{{#unless page_saved_causes}} href="/saved_causes" {{/unless}}
+						>
+							<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+						</a>
+					</div>
+					<div class="btn-group" role="group">
+						<a 
+							type="button" 
+							class="my-nav-footer-btn btn btn-lg btn-default {{#if page_charities}} active {{/if}}" 
+							{{#unless page_charities}} href="/charities"{{/unless}}
+						>
+							<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+						</a>
+					</div>
+					<div class="btn-group" role="group">
+						<a 
+							type="button" 
+							class="my-nav-footer-btn btn btn-lg btn-default {{#if page_achievements}} active {{/if}}"
+							{{#unless page_achievements}} href="/achievements" {{/unless}}
+						>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+						</a>
+					</div>
+					<div class="btn-group" role="group">
+						<a 
+							type="button" 
+							class="my-nav-footer-btn btn btn-lg btn-default {{#if page_settings}} active {{/if}}" 
+							{{#unless page_settings}} href="/settings" {{/unless}}
+						>
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</a>
+					</div>
+				</div>
+  			</div>
+  		</div>
+  	</div>

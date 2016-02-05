@@ -1,0 +1,185 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Login</title>	
+	
+	<!-- Add Common Head tags and Base CSS files -->
+	{{> head_css}}
+
+</head>
+
+<body>
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button-->
+				<div class="navbar-brand navbar-brand-centered">Login</div>
+			</div>
+			<!--div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Favorites</a></li>
+					<li><a href="#">All Causes</a></li>
+					<li><a href="#">Accomplishments</a></li>
+					<li><a href="#">Settings</a></li>
+				</ul>
+			</div--><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<!--<div class="jumbotron">
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4>You've saved:</h4>
+
+					<center><h1>$10.00</h1></center>
+
+				</div>
+				<div class="panel-footer"><center>Over 10 days</center></div>
+			</div>
+		</div>
+	</div>-->
+
+	<div class="bottom-background">
+		<div class="container">
+			
+			<a type="button" class="btn btn-info center-block" href="/">Login</a>
+			
+			{{#if COMMENT}}
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+				<!--<a href="#" class="thumbnail donation_block">-->
+					<div class="panel panel-default">
+						<div class="my-causes-body panel-body">
+							<p><strong>SAVE</strong> 3 puppies from the streets... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
+							<h5 class="causes-cost">with $5.00</h5>
+						</div>
+						<div class="panel-footer">
+							<div class="my-progress-bar progress">
+		  						<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		  						100%
+		    					<span class="sr-only">100% Complete (success)</span>
+		  						</div>
+							</div>
+							<div class=" btn-group btn-group-justified" role="group" aria-label="...">
+								<div class="btn-group" role="group">
+									<a href="holdingpage.html"><button type="button" class="btn btn-default">DONATE</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!--</a>-->
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="panel panel-default">
+						<div class="my-causes-body panel-body">
+							<p><strong>PROTECT</strong> 6 people from malaria... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
+							<h5 class="causes-cost">with $10.00</h5>
+						</div>
+						<div class="panel-footer">
+							<div class="my-progress-bar progress">
+		  						<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+		  						80%
+		    					<span class="sr-only">80% Complete (success)</span>
+		  						</div>
+							</div>
+							<div class="donation-rate">
+								<p>You're saving <b>25c</b> per day. <a href="#">edit</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="panel panel-default">
+						<div class="my-causes-body panel-body">
+							<p><strong>PROVIDE</strong> safe water to 8 community members... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
+							<h5 class="causes-cost">with $3.00</h5>
+						</div>
+						<div class="panel-footer">
+							<div class="my-progress-bar progress">
+		  						<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+		  						60%
+		    					<span class="sr-only">60% Complete (success)</span>
+		  						</div>
+							</div>
+							<div class="donation-rate">
+								<p>You're saving <b>50c</b> per day. <a href="#">edit</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="panel panel-default well well-sm">
+						<div class="panel-body">
+							<div class="empty-cause">
+								<span class="empty-cause-icon glyphicon glyphicon-plus" aria-hidden="true"></span>
+								<p>Add a cause to start saving!</p>
+							</div>
+						</div>
+						<!--div class="panel-footer">
+							<div class="my-progress-bar progress">
+		  						<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+		  						60%
+		    					<span class="sr-only">60% Complete (success)</span>
+		  						</div>
+							</div>
+							<div class="donation-rate">
+								<p>You're donating at <b>50c</b> per day. <a href="#">edit</a></p>
+							</div>
+						</div-->
+					</div>
+				</div>
+			</div>
+
+			<!--h4 id="until_you_can_label">$5 until you can donate to ...</h4>
+
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block donation_block_disabled">
+						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></p>
+
+						<h5 class="donation_block_cost">with $15.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block donation_block_disabled">
+						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></p>
+
+						<h5 class="donation_block_cost">with $15.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block donation_block_disabled">
+						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></p>
+
+						<h5 class="donation_block_cost">with $15.00</h5>
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a href="#" class="thumbnail donation_block donation_block_disabled">
+						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></p>
+
+						<h5 class="donation_block_cost">with $15.00</h5>
+					</a>
+				</div>
+			</div-->
+			{{/if}}
+	  	</div>
+  	</div>
+  	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
+	<script src="/js/bootstrap.min.js"></script>
+
+	<!-- Our custom js 
+	<script src="/js/settings.js"></script>-->
+</body>
+</html>
