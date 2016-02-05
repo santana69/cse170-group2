@@ -19,7 +19,7 @@ body {
      margin-left: -80px;
 }
 
-/**** DONATION BLOCK TEXT ****/
+/**** DONATION BLOCK (ACTIVE) TEXT****/
 .donation_block, .donation_block:link, .donation_block:hover, .donation_block:visited, .donation_block:active{
      /*height: 120px;*/
      color: black;
@@ -58,6 +58,7 @@ body {
      height: 125px;
 }
 
+/*** DONATION BLOCK (DISABLED) TEXT ***/
 .empty-cause {
      height: 162px;
      text-align: center;
@@ -69,6 +70,12 @@ body {
      color: #a6a6a6;
 }
 
+/*** DONATION BLOCK PRGORESS BAR ****/
+.my-progress-bar {
+     margin-bottom: 10px;
+}
+
+/*** NAV FOOTER ***/
 .footer {
   bottom: 0;
   width: 100%;
@@ -85,10 +92,15 @@ body {
      color: #a6a6a6;
 }
 
-.my-progress-bar {
-     margin-bottom: 10px;
+/*** HOLDING PAGE ***/
+#holding-pg-wrapper {
+     text-align: center;
+     margin-top: 90px;
 }
 
+.holding-warning-icon {
+     font-size: 30px;
+}
 
 /*
 .navbar {
