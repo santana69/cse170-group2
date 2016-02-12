@@ -6,7 +6,6 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var $ = require('jquery');
 var handlebars = require('express3-handlebars')
 
 //Main Tabs

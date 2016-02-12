@@ -6,7 +6,6 @@ exports.toggleFavorite = function(req, res) { 
 	var source = req.query.source;
 
 	if (source == "saved_causes") {
-		console.log("WHY");
 		var charity = fullData['saved_causes'][req.query.index_charity];
 
 		if (req.query.action == "remove") {
