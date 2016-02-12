@@ -1,0 +1,118 @@
+{
+	"my_causes" : [
+		{
+			"charity" : {
+				"id": "1",
+				"name" : "Charity 1",
+				"action": "SAVE",
+				"description": "3 puppies from the streets",
+				"cost": "$5.00"
+			},
+			"percentage" : "100",
+			"saving_amount" : "25c"
+		},
+		{
+			"charity" : {
+				"id": "2",
+				"name" : "Charity 2",
+				"action": "PROTECT",
+				"description": "6 people from malaria",
+				"cost": "$10.00"
+			},
+			"percentage" : "80",
+			"saving_amount" : "25c"
+		},
+		{
+			"charity" : {
+				"id": "8",
+				"name" : "Charity 8",
+				"action": "PROVIDE",
+				"description": "safe water to 8 community members",
+				"cost": "$3.00"
+			},
+			"percentage" : "60",
+			"saving_amount" : "50c"
+		}
+	],
+	"saved_causes" : [
+	],
+	"charities" : [
+		{
+			"charity" : {
+				"id": "1",
+				"name" : "Charity 1",
+				"action": "SAVE",
+				"description": "3 puppies from the streets",
+				"cost": "$5.00"
+			},
+			"my_cause" : "1",
+			"favorite" : ""
+		},
+		{
+			"charity" : {
+				"id": "2",
+				"name" : "Charity 2",
+				"action": "PROTECT",
+				"description": "6 people from malaria",
+				"cost": "$10.00"
+			},
+			"my_cause" : "1",
+			"favorite" : ""
+		},
+		{
+			"charity" : {
+				"id": "3",
+				"name" : "Charity 3",
+				"action": "BUY",
+				"description": "10 mosquito nets for children",
+				"cost": "$15.00"
+			},
+			"my_cause" : "",
+			"favorite" : ""
+		},
+		{
+			"charity" : {
+				"id": "4",
+				"name" : "Charity 4",
+				"action": "HELP",
+				"description": "the Native American communities",
+				"cost": "$3.00"
+			},
+			"my_cause" : "",
+			"favorite" : ""
+		},
+		{
+			"charity" : {
+				"id": "5",
+				"name" : "Charity 5",
+				"action": "PROVIDE",
+				"description": "electricity to underrepresented countries",
+				"cost": "$8.00"
+			},
+			"my_cause" : "",
+			"favorite" : ""
+		},
+		{
+			"charity" : {
+				"id": "6",
+				"name" : "Charity 6",
+				"action": "HELP",
+				"description": "8 people get off the streets",
+				"cost": "$4.00"
+			},
+			"my_cause" : "",
+			"favorite" : ""
+		},
+		{
+			"charity" : {
+				"id": "7",
+				"name" : "Charity 7",
+				"action": "GIVE",
+				"description": "100 blankets to homeless people",
+				"cost": "$3.00"
+			},
+			"my_cause" : "",
+			"favorite" : ""
+		}
+	]
+}

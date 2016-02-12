@@ -6,6 +6,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var $ = require('jquery');
 var handlebars = require('express3-handlebars')
 
 //Main Tabs
@@ -23,6 +24,10 @@ var my_cause_detail	= require('./routes/my_cause_detail');
 
 //Cause Detail
 var cause_detail 	= require('./routes/cause_detail');
+
+//Ajax
+//add/remove favorite
+var charities_add_favorite = require('./routes/toggle_favorite');
 
 //var add 	= require('./routes/add');
 // Example route
@@ -66,6 +71,9 @@ app.get('/my_cause_detail', my_cause_detail.view);
 
 //Cause Detail
 app.get('/cause_detail', cause_detail.view);
+
+//Ajax
+app.get('/charities/toggle_favorite', charities_add_favorite.toggleFavorite);
 
 //app.get('/add', add.addFriend);
 // Example route

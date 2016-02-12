@@ -85,28 +85,55 @@
 		<div class="container">
 			
 			<div class="row">
-				<div class="col-xs-6 col-md-3">
+				{{#each fullData.charities}}
+				<div class="col-xs-6 col-md-3 charity" id="charity{{@index}}">
 					<div class="panel panel-default">
 						<div class="causes-body panel-body">
-							<p><strong>SAVE</strong> 3 puppies from the streets... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with $5.00</h5>
+							{{#with charity}}
+							<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
+							<h5 class="causes-cost">with {{cost}}</h5>
+							{{/with}}
 						</div>
 						<div class="panel-footer">
 							<div class="btn-group btn-group-justified" role="group" aria-label="...">
 								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addMyCause">
-										<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+									<button 
+										type="button" 
+										class="btn btn-lg btn-default add-button"
+										{{#if my_cause}}
+											disabled
+										{{/if}}
+									>
+										<span 
+											class="glyphicon 
+											{{#if my_cause}}
+												glyphicon-ok
+											{{else}}
+												glyphicon-plus
+											{{/if}}" 
+											aria-hidden="true"
+										>
+										</span>
 									</button>
 								</div>
 								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addSavedCause">
-										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+									<button 
+										type="button" 
+										class="btn btn-lg btn-default favorite-button
+											{{#if favorite}}
+												favorite-button-active
+											{{/if}}" 
+									>
+										<span class="glyphicon glyphicon-heart" aria-hidden="true">
+										</span>
 									</button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				{{/each}}
+				<!--
 				<div class="col-xs-6 col-md-3">
 					<div class="panel panel-default">
 						<div class="causes-body panel-body">
@@ -239,7 +266,7 @@
 						</div>
 					</div>
 				</div>
-
+				-->
 			</div>
 	  	</div>
   	</div>
@@ -251,7 +278,7 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
 	<script src="/js/bootstrap.min.js"></script>
-
+	
 	<!-- Our custom js -->
 	<script src="/js/charities.js"></script>
 </body>
