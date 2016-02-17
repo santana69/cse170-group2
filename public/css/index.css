@@ -9,7 +9,9 @@
 /*.donation_block_disabled {
      background-color: lightgray;
 }*/
-
+.testing-lh {
+     color: red;
+}
 .causes-cost {
      position: absolute;
      bottom: 100px;
