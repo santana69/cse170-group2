@@ -1,0 +1,113 @@
+@media only screen and (max-width: 960px) {
+	html {
+		position: absolute;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+	}
+	#bg-img {
+		position: absolute;
+		-webkit-filter: blur(5px);
+		width: 100%;
+		height: 100%;
+		background: #000 url(../images/login_pic_mobile.jpg) center center fixed no-repeat;
+    	display: block;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		transform: scale(1.1)
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	html {
+		position: absolute;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+	}
+	#bg-img {
+		position: absolute;
+		-webkit-filter: blur(5px);
+		width: 100%;
+		height: 100%;
+		background: #000 url(../images/login_pic.jpg) center center fixed no-repeat;
+    	display: block;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		transform: scale(1.1)
+	}
+}
+
+/*.bg-effect {
+	filter: blur(20px);
+	-webkit-filter: blur(5px);
+}*/
+
+.signin-form {
+	color: white;
+	font-size: 1.2rem;
+	font-family: "HelveticaNeue-UltraLight";
+	letter-spacing: 0.8px;
+}
+
+.my-btn {
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 13px;
+	text-transform: uppercase;
+	font-family: "HelveticaNeue-Light";
+	letter-spacing: 0.6px;
+}
+
+.my-input {
+	border-radius: 13px;
+	text-transform: uppercase;
+	font-family: "HelveticaNeue-Light";
+	letter-spacing: 0.6px;
+}
+
+.sign-in-style {
+	border: 2px solid white;
+	background-color: transparent;
+}
+
+.sign-in-style:hover {
+	border: 2px solid #F2784B;
+	background-color: #F2784B;
+}
+
+.sign-up-style {
+	border: 2px solid #F2784B;
+	background-color: #F2784B;
+}
+
+.sign-up-style:hover {
+	border: 2px solid #F2784B;
+	background-color: #F2784B;
+}
+
+.logo {
+	width: 210px;
+	margin-bottom: 25px;
+}
+
+.carity-info {
+	margin-top: 10%;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
