@@ -12,6 +12,17 @@
 </head>
 
 <body>
+
+	<script> 
+		function htmlDecode(input){
+			var e = document.createElement('div');
+			e.innerHTML = input;
+			return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+		}
+		var session = JSON.parse(htmlDecode("{{json session}}"));
+		console.log(session);
+	</script>
+
 	<!-- Static navbar -->
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -81,194 +92,127 @@
 		</div>
 	</div>
 
-	<div class="bottom-background">
-		<div class="container">
-			
-			<div class="row">
-				{{#each fullData.charities}}
-				<div class="col-xs-6 col-md-3 charity" id="charity{{@index}}">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							{{#with charity}}
-							<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with {{cost}}</h5>
-							{{/with}}
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button 
-										type="button" 
-										class="btn btn-lg btn-default add-button"
-										{{#if my_cause}}
-											disabled
-										{{/if}}
-									>
-										<span 
-											class="glyphicon 
-											{{#if my_cause}}
-												glyphicon-ok
-											{{else}}
-												glyphicon-plus
-											{{/if}}" 
-											aria-hidden="true"
-										>
-										</span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button 
-										type="button" 
-										class="btn btn-lg btn-default favorite-button
-											{{#if favorite}}
-												favorite-button-active
-											{{/if}}" 
-									>
-										<span class="glyphicon glyphicon-heart" aria-hidden="true">
-										</span>
-									</button>
-								</div>
-							</div>
-						</div>
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="btn-group btn-group-justified" role="group" aria-label="...">
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-default {{#unless session.showMyFavorites}} active {{/unless}}" id="btn_group_all">All Charities</button>
+					</div>
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-default {{#if session.showMyFavorites}} active {{/if}}" id="btn_group_favorites">My Favorites</button>
 					</div>
 				</div>
-				{{/each}}
-				<!--
-				<div class="col-xs-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							<p><strong>PROTECT</strong> 6 people from malaria... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with $10.00</h5>
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addMyCause">
-										<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addSavedCause">
-										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							<p><strong>BUY</strong> 10 mosquito nets for children... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with $15.00</h5>
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addMyCause">
-										<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addSavedCause">
-										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							<p><strong>HELP</strong> the Native American communities... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with $3.00</h5>
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addMyCause">
-										<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addSavedCause">
-										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							<p><strong>PROVIDE</strong> electricity to underrepresented countries... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with $8.00</h5>
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addMyCause">
-										<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addSavedCause">
-										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							<p><strong>HELP</strong> 8 people get off the streets... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with $4.00</h5>
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addMyCause">
-										<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addSavedCause">
-										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							<p><strong>GIVE</strong> 100 blankets to homeless people... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with $3.00</h5>
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addMyCause">
-										<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#addSavedCause">
-										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				-->
 			</div>
-	  	</div>
+		</div>
+
+		<br/>
+
+		<!-- All Charities list -->
+		<div class="row" id="row-all-charities" {{#if session.showMyFavorites}} hidden {{/if}}>
+			{{#each fullData.charities}}
+			<div class="col-xs-6 col-md-3 charity" id="charity{{@index}}">
+				<div class="panel panel-default">
+					<div class="causes-body panel-body">
+						{{#with charity}}
+						<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
+						<h5 class="causes-cost">with {{cost}}</h5>
+						{{/with}}
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+								<button 
+									type="button" 
+									class="btn btn-lg btn-default add-button"
+									{{#if my_cause}}
+										disabled
+									{{/if}}
+								>
+									<span 
+										class="glyphicon 
+										{{#if my_cause}}
+											glyphicon-ok
+										{{else}}
+											glyphicon-plus
+										{{/if}}" 
+										aria-hidden="true"
+									>
+									</span>
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button 
+									type="button" 
+									class="btn btn-lg btn-default favorite-button
+										{{#if favorite}}
+											favorite-button-active
+										{{/if}}" 
+								>
+									<span class="glyphicon glyphicon-heart" aria-hidden="true">
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+
+		<div class="row" id="row-favorites" {{#unless session.showMyFavorites}} hidden {{/unless}}>
+			{{#each fullData.saved_causes}}
+			<div class="col-xs-6 col-md-3 charity" id="charity{{@index}}">
+				<div class="panel panel-default">
+					<div class="causes-body panel-body">
+						{{#with charity}}
+						<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
+						<h5 class="causes-cost">with {{cost}}</h5>
+						{{/with}}
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+								<button 
+									type="button" 
+									class="btn btn-lg btn-default" 
+									data-toggle="modal" 
+									data-target="#addMyCause"
+									{{#if my_cause}}
+										disabled
+									{{/if}}
+								>
+									<span 
+										class="glyphicon 
+										{{#if my_cause}}
+											glyphicon-ok
+										{{else}}
+											glyphicon-plus
+										{{/if}}" 
+										aria-hidden="true"
+									>
+									</span>
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button 
+									type="button" 
+									class="btn btn-lg btn-default favorite-button
+										{{#if favorite}}
+											favorite-button-active
+										{{/if}}" 
+								>
+									<span class="glyphicon glyphicon-heart" aria-hidden="true">
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
   	</div>
 
   	<!-- Footer Partial -->

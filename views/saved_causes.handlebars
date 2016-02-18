@@ -52,58 +52,7 @@
 	<div class="bottom-background">
 		<div class="container">
 			
-			<div class="row">
-				{{#each fullData.saved_causes}}
-				<div class="col-xs-6 col-md-3 charity" id="charity{{@index}}">
-					<div class="panel panel-default">
-						<div class="causes-body panel-body">
-							{{#with charity}}
-							<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with {{cost}}</h5>
-							{{/with}}
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button 
-										type="button" 
-										class="btn btn-lg btn-default" 
-										data-toggle="modal" 
-										data-target="#addMyCause"
-										{{#if my_cause}}
-											disabled
-										{{/if}}
-									>
-										<span 
-											class="glyphicon 
-											{{#if my_cause}}
-												glyphicon-ok
-											{{else}}
-												glyphicon-plus
-											{{/if}}" 
-											aria-hidden="true"
-										>
-										</span>
-									</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button 
-										type="button" 
-										class="btn btn-lg btn-default favorite-button
-											{{#if favorite}}
-												favorite-button-active
-											{{/if}}" 
-									>
-										<span class="glyphicon glyphicon-heart" aria-hidden="true">
-										</span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				{{/each}}
-			</div>
+			
 	  	</div>
   	</div>
 

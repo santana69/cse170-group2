@@ -28,16 +28,27 @@ var cause_detail 	= require('./routes/cause_detail');
 //add/remove favorite
 var charities_add_favorite = require('./routes/toggle_favorite');
 
+//update session variable
+var update_session = require('./routes/update_session');
+
 //var add 	= require('./routes/add');
 // Example route
 // var user = require('./routes/user');
 
 var app = express();
 
+//Register helpers
+var hbs = handlebars.create({
+    // Specify helpers which are only registered on this instance. 
+    helpers: {
+        json: function (context) { return JSON.stringify(context); }
+    }
+});
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -54,11 +65,18 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+localQuery = function(req, res, next) {
+  res.locals.session = req.session;
+  next();
+};
+
+
+
 // Add routes here
 //Main Tabs
 app.get('/', index.view);
 app.get('/saved_causes', saved_causes.view);
-app.get('/charities', charities.view);
+app.get('/charities', localQuery, charities.view);
 app.get('/achievements', achievements.view);
 app.get('/settings', settings.view);
 
@@ -73,6 +91,7 @@ app.get('/cause_detail', cause_detail.view);
 
 //Ajax
 app.get('/charities/toggle_favorite', charities_add_favorite.toggleFavorite);
+app.get('/session/update_session', update_session.updateSession);
 
 //app.get('/add', add.addFriend);
 // Example route
