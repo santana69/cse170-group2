@@ -17,6 +17,7 @@ var settings		= require('./routes/settings');
 
 //Login and Signup
 var login 			= require('./routes/login');
+var createacct      = require('./routes/createacct');
 
 //My Cause Detail
 var my_cause_detail	= require('./routes/my_cause_detail');
@@ -82,6 +83,7 @@ app.get('/settings', settings.view);
 
 //Login and Signup
 app.get('/login', login.view);
+app.get('/createacct', createacct.view);
 
 //My Cause Detail
 app.get('/my_cause_detail', my_cause_detail.view);
