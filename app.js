@@ -90,7 +90,7 @@ app.get('/my_cause_detail/:id_cause', my_cause_detail.view);
 
 //Cause Detail
 app.get('/cause_detail/:source/:id_cause', localQuery, cause_detail.view);
-
+ 
 //Ajax
 app.get('/charities/toggle_favorite', charities_add_favorite.toggleFavorite);
 app.get('/charities/add_my_cause', charities.addMyCause);
