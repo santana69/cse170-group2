@@ -47,7 +47,7 @@ var hbs = handlebars.create({
 });
 
 // all environments
-app.set('port', 3001);
+app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
