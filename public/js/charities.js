@@ -77,6 +77,28 @@ function initializePage() {
 		var id = $(this).closest('.charity').attr('id').substr('charity'.length);
 		console.log(id);
 		
+		$.get("/charities/add_my_cause", {'source':'charities', 'index_charity': id}).done(function(data){
+			if (data['result'] == "full") {
+				$('#addMyCauseFull').modal("show");
+			}
+			else {
+				location.reload();
+			}
+		});
+	});
+
+	$('.add-button-favorites').click(function(e) {
+		var id = $(this).closest('.charity').attr('id').substr('charity'.length);
+		console.log(id);
+		
+		$.get("/charities/add_my_cause", {'source':'saved_causes', 'index_charity': id}).done(function(data){
+			if (data['result'] == "full") {
+				$('#addMyCauseFull').modal("show");
+			}
+			else {
+				location.reload();
+			}
+		});
 	});
 
 	$('.favorite-button').click(function(e) {

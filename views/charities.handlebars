@@ -60,14 +60,14 @@
 		</div>
 	</div>-->
 
-	<div class="modal fade" id="addMyCause" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade" id="addMyCauseFull" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">My Cause</h4>
+					<h4 class="modal-title">Oops!</h4>
 				</div>
 				<div class="modal-body">
-					You have added to your current causes!
+					You already have the maximum (4) number of causes you can save to.
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
@@ -176,9 +176,7 @@
 							<div class="btn-group" role="group">
 								<button 
 									type="button" 
-									class="btn btn-lg btn-default" 
-									data-toggle="modal" 
-									data-target="#addMyCause"
+									class="btn btn-lg btn-default add-button-favorites"
 									{{#if my_cause}}
 										disabled
 									{{/if}}

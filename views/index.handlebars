@@ -106,7 +106,7 @@
 					{{#if charity}}
 					<div class="col-xs-6 col-md-3">
 						<div class="my-panel panel panel-default">
-							<div class="my-causes-body panel-body">
+							<div class="my-causes-body panel-body" id="cause{{@index}}">
 								{{#with charity}}
 								<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
 								<h5 class="causes-cost">with {{cost}}</h5>
@@ -114,7 +114,7 @@
 							</div>
 							<div class="panel-footer">
 								<div class="my-progress-bar progress">
-			  						<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%">
+			  						<div class="progress-bar progress-bar-{{color}} progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%; {{#if progress-empty}}color:black;{{/if}}">
 			  						{{percentage}}%
 			    					<span class="sr-only">{{percentage}}% Complete</span>
 			  						</div>
@@ -127,7 +127,7 @@
 								</div>
 								{{else}}
 								<div class="donation-rate">
-									<p>You're saving <b>{{saving_amount}}</b> per day. <a href="/my_cause_detail">edit</a></p>
+									<p>You're saving <b>{{saving_amount}}</b> per day. <a href="/my_cause_detail/{{@index}}">edit</a></p>
 								</div>
 								{{/if}}
 							</div>

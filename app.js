@@ -86,13 +86,15 @@ app.get('/login', login.view);
 app.get('/createacct', createacct.view);
 
 //My Cause Detail
-app.get('/my_cause_detail', my_cause_detail.view);
+app.get('/my_cause_detail/:id_cause', my_cause_detail.view);
 
 //Cause Detail
 app.get('/cause_detail', cause_detail.view);
 
 //Ajax
 app.get('/charities/toggle_favorite', charities_add_favorite.toggleFavorite);
+app.get('/charities/add_my_cause', charities.addMyCause);
+app.get('/my_cause_detail/:id_cause/:id_saving_amount/:saving_amount', my_cause_detail.updateSavingAmount);
 app.get('/session/update_session', update_session.updateSession);
 
 //app.get('/add', add.addFriend);

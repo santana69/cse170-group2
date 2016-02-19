@@ -6,9 +6,12 @@
 				"name" : "Charity 1",
 				"action": "SAVE",
 				"description": "3 puppies from the streets",
-				"cost": "$5.00"
+				"cost": "$5.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity1.com" 
 			},
 			"percentage" : "100",
+			"id_saving_amount": "3",
 			"saving_amount" : "25c",
 			"finished" : "1"
 		},
@@ -18,9 +21,12 @@
 				"name" : "Charity 2",
 				"action": "PROTECT",
 				"description": "6 people from malaria",
-				"cost": "$10.00"
+				"cost": "$10.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity2.com" 
 			},
 			"percentage" : "80",
+			"id_saving_amount": "3",
 			"saving_amount" : "25c",
 			"finished" : ""
 		},
@@ -30,9 +36,12 @@
 				"name" : "Charity 8",
 				"action": "PROVIDE",
 				"description": "safe water to 8 community members",
-				"cost": "$3.00"
+				"cost": "$3.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity8.com" 
 			},
-			"percentage" : "60",
+			"percentage" : "35",
+			"id_saving_amount": "4",
 			"saving_amount" : "50c",
 			"finished" : ""
 		},
@@ -49,7 +58,9 @@
 				"name" : "Charity 1",
 				"action": "SAVE",
 				"description": "3 puppies from the streets",
-				"cost": "$5.00"
+				"cost": "$5.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity1.com" 
 			},
 			"my_cause" : "1",
 			"favorite" : ""
@@ -60,7 +71,9 @@
 				"name" : "Charity 2",
 				"action": "PROTECT",
 				"description": "6 people from malaria",
-				"cost": "$10.00"
+				"cost": "$10.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity2.com" 
 			},
 			"my_cause" : "1",
 			"favorite" : ""
@@ -71,7 +84,9 @@
 				"name" : "Charity 3",
 				"action": "BUY",
 				"description": "10 mosquito nets for children",
-				"cost": "$15.00"
+				"cost": "$15.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity3.com" 
 			},
 			"my_cause" : "",
 			"favorite" : ""
@@ -82,7 +97,9 @@
 				"name" : "Charity 4",
 				"action": "HELP",
 				"description": "the Native American communities",
-				"cost": "$3.00"
+				"cost": "$3.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity4.com" 
 			},
 			"my_cause" : "",
 			"favorite" : ""
@@ -93,7 +110,9 @@
 				"name" : "Charity 5",
 				"action": "PROVIDE",
 				"description": "electricity to underrepresented countries",
-				"cost": "$8.00"
+				"cost": "$8.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity5.com" 
 			},
 			"my_cause" : "",
 			"favorite" : ""
@@ -104,7 +123,9 @@
 				"name" : "Charity 6",
 				"action": "HELP",
 				"description": "8 people get off the streets",
-				"cost": "$4.00"
+				"cost": "$4.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity6.com" 
 			},
 			"my_cause" : "",
 			"favorite" : ""
@@ -115,7 +136,9 @@
 				"name" : "Charity 7",
 				"action": "GIVE",
 				"description": "100 blankets to homeless people",
-				"cost": "$3.00"
+				"cost": "$3.00",
+				"image": "/images/not_available.jpg",
+				"url": "http://charity7.com" 
 			},
 			"my_cause" : "",
 			"favorite" : ""
