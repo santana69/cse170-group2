@@ -9,7 +9,8 @@
 				"cost": "$5.00"
 			},
 			"percentage" : "100",
-			"saving_amount" : "25c"
+			"saving_amount" : "25c",
+			"finished" : "1"
 		},
 		{
 			"charity" : {
@@ -20,7 +21,8 @@
 				"cost": "$10.00"
 			},
 			"percentage" : "80",
-			"saving_amount" : "25c"
+			"saving_amount" : "25c",
+			"finished" : ""
 		},
 		{
 			"charity" : {
@@ -31,7 +33,11 @@
 				"cost": "$3.00"
 			},
 			"percentage" : "60",
-			"saving_amount" : "50c"
+			"saving_amount" : "50c",
+			"finished" : ""
+		},
+		{
+			
 		}
 	],
 	"saved_causes" : [

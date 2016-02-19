@@ -102,8 +102,54 @@
 			<hr></hr> -->
 			
 			<div class="row">
+				{{#each fullData.my_causes}}
+					{{#if charity}}
+					<div class="col-xs-6 col-md-3">
+						<div class="my-panel panel panel-default">
+							<div class="my-causes-body panel-body">
+								{{#with charity}}
+								<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
+								<h5 class="causes-cost">with {{cost}}</h5>
+								{{/with}}
+							</div>
+							<div class="panel-footer">
+								<div class="my-progress-bar progress">
+			  						<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%">
+			  						{{percentage}}%
+			    					<span class="sr-only">{{percentage}}% Complete</span>
+			  						</div>
+								</div>
+								{{#if finished}}
+								<div class="btn-group btn-group-justified" role="group" aria-label="...">
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-default donate-button" data-toggle="modal" data-target="#donationConfirmModal">DONATE</button>
+									</div>
+								</div>
+								{{else}}
+								<div class="donation-rate">
+									<p>You're saving <b>{{saving_amount}}</b> per day. <a href="/my_cause_detail">edit</a></p>
+								</div>
+								{{/if}}
+							</div>
+						</div>
+					</div>
+					{{else}}
+					<div class="col-xs-6 col-md-3">
+						<a href="/charities"> 
+							<div class="panel panel-default well well-sm">
+								<div class="panel-body">
+									<div class="empty-cause">
+										<span class="empty-cause-icon glyphicon glyphicon-plus" aria-hidden="true"></span>
+										<p>Add a cause to start saving!</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					{{/if}}
+				{{/each}}
+				<!--
 				<div class="col-xs-6 col-md-3">
-				<!--<a href="#" class="thumbnail donation_block">-->
 					<div class="my-panel panel panel-default">
 						<div class="my-causes-body panel-body">
 							<p><strong>SAVE</strong> 3 puppies from the streets... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
@@ -123,7 +169,6 @@
 							</div>
 						</div>
 					</div>
-				<!--</a>-->
 				</div>
 				<div class="col-xs-6 col-md-3">
 					<div class="my-panel panel panel-default">
@@ -182,44 +227,12 @@
 								<div class="donation-rate">
 									<p>You're donating at <b>50c</b> per day. <a href="#">edit</a></p>
 								</div>
-							</div-->
+							</div--
 						</div>
 					</a>
 				</div>
 			</div>
-
-			<!--h4 id="until_you_can_label">$5 until you can donate to ...</h4>
-
-			<div class="row">
-				<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail donation_block donation_block_disabled">
-						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></p>
-
-						<h5 class="donation_block_cost">with $15.00</h5>
-					</a>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail donation_block donation_block_disabled">
-						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></p>
-
-						<h5 class="donation_block_cost">with $15.00</h5>
-					</a>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail donation_block donation_block_disabled">
-						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></p>
-
-						<h5 class="donation_block_cost">with $15.00</h5>
-					</a>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail donation_block donation_block_disabled">
-						<p><strong>BUY</strong> 10 mosquito nets for children... more info <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></p>
-
-						<h5 class="donation_block_cost">with $15.00</h5>
-					</a>
-				</div>
-			</div-->
+			-->
 	  	</div>
   	</div>
 
