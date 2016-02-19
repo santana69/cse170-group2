@@ -70,7 +70,13 @@ function initializePage() {
 	//To open detail of selected charity
 	$(".causes-body").click(function(e) {
 
-		window.open("/cause_detail", "_self");
+		window.open("/cause_detail/charities/" + $(this).attr('id').substr('cause'.length), "_self");
+	});
+
+	//To open detail of selected charity
+	$(".causes-body-favorites").click(function(e) {
+
+		window.open("/cause_detail/saved_causes/" + $(this).attr('id').substr('cause'.length), "_self");
 	});
 
 	$('.add-button').click(function(e) {

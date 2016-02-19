@@ -47,7 +47,7 @@ var hbs = handlebars.create({
 });
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', 3001);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -89,7 +89,7 @@ app.get('/createacct', createacct.view);
 app.get('/my_cause_detail/:id_cause', my_cause_detail.view);
 
 //Cause Detail
-app.get('/cause_detail', cause_detail.view);
+app.get('/cause_detail/:source/:id_cause', localQuery, cause_detail.view);
 
 //Ajax
 app.get('/charities/toggle_favorite', charities_add_favorite.toggleFavorite);

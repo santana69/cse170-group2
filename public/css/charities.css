@@ -16,11 +16,11 @@
      font-size: 8px;
 }
 
-.causes-body {
+.causes-body, .causes-body-favorites {
      height: 125px;
 }
 
-.causes-body:hover {
+.causes-body:hover, .causes-body-favorites:hover {
      cursor: pointer;
      border: 1px solid lightblue;
 }
