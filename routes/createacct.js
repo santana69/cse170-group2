@@ -21,6 +21,7 @@ exports.attemptSignUp = function(req, res) {
 	//clear fulldata
 	fullData.my_causes = [{},{},{},{}];
 	fullData.saved_causes = [];
+	fullData.history = [];
 
 	for (var i=0; i<fullData.charities.length; ++i) {
 		var currCause = fullData.charities[i];

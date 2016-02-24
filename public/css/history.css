@@ -1,7 +1,6 @@
-
 .causes-cost {
      position: absolute;
-     bottom: 80px;
+     bottom: 65px;
      right: 20px;
      text-align: right;
 }
@@ -9,25 +8,23 @@
 .more-info {
      font-style: italic;
      font-size: 12px;
+
 }
 
 .more-info-icon {
      font-size: 8px;
 }
 
-.causes-body, .causes-body-favorites {
+.my-causes-body {
      height: 125px;
 }
 
-.causes-body:hover, .causes-body-favorites:hover {
+.my-causes-body:hover {
      cursor: pointer;
      border: 1px solid lightblue;
 }
 
-.favorite-button {
-     color: #a6a6a6;
-}
-
-.favorite-button-active {
-     color: #000000;
+/*** DONATION BLOCK PRGORESS BAR ****/
+.my-progress-bar {
+     margin-bottom: 10px;
 }

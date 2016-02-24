@@ -76,4 +76,23 @@ function initializePage() {
 
 		window.open("/addMoneyToCause/index/"+id_cause+"/"+amountToAdd, "_self");
 	});
+
+	$('.donate-button').click(function(e) {
+		var id_cause = $(this).closest('.my-panel').find('.my-causes-body').attr('id').substr('cause'.length);
+
+		$('#donationConfirmModal').find('#donateButton').attr('value', id_cause);
+
+		$('#donationConfirmModal').modal('show');
+	});
+
+	$('#donateButton').click(function(e) {
+		var id_cause = $(this).attr('value');
+
+		$('#donationModal').find('#donateAnchor').attr('href', "/donateToCause/" + id_cause);
+
+		$('#donationConfirmModal').modal('hide');
+		$('#donationModal').modal('show');
+	});
+
+
 }

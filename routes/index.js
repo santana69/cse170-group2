@@ -77,3 +77,24 @@ exports.addMoneyToCause = function(req, res) {
 		res.redirect('/my_cause_detail/' + id_cause);
 	}
 };
+
+exports.donateToCause = function(req, res) {
+	res.render('empty');
+
+	var id_cause = req.params.id_cause;
+
+	var charity = fullData.my_causes[id_cause].charity;
+
+	//add to history
+	fullData.history.push({"charity":charity});
+
+	//deduct money from user balance
+	var new_balance = parseFloat(user['balance'] != "" ? user['balance'] : "0.00") - parseFloat(charity.cost);
+	user['balance'] = "" + new_balance.toFixed(2);
+
+	//we donated, so set achievement
+	achievements[3].completed = true;
+
+	//delete from my causes
+	res.redirect('/my_cause_detail/deleteCause/' + id_cause);
+};
