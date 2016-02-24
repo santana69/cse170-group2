@@ -148,16 +148,5 @@
 		}
 	],
 	"history" : [ 
-		{
-			"charity" : {
-				"id": "2",
-				"name" : "Charity 2",
-				"action": "PROTECT",
-				"description": "6 people from malaria",
-				"cost": "10.00",
-				"image": "/images/not_available.jpg",
-				"url": "http://charity2.com" 
-			}
-		}
 	]
 }
