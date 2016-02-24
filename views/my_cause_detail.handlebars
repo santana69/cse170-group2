@@ -7,6 +7,8 @@
 	<!-- Add Common Head tags and Base CSS files -->
 	{{> head_css}}
 
+	<!-- Custom CSS for this page -->
+	<link href="/css/my_cause_detail.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,41 +50,37 @@
 			<div class="col-xs-12">
 				<div class="my-progress-bar progress">
 					<div class="progress-bar progress-bar-{{color}} progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%; {{#if progress-empty}}color:black;{{/if}}">
-					{{percentage}}%
-					<span class="sr-only">{{percentage}}% Complete</span>
+					{{money_saved}}
+					<span class="sr-only">Saved {{money_saved}} so far</span>
 					</div>
 				</div>
 			</div>
-			{{#unless finished}}
-			<div class="col-xs-12">
-				<h5 class="text-center">I want to save 
-				<select id="save_amount"> 
-					<option value="0">10c</option>
-					<option value="1">15c</option>
-					<option value="2">20c</option>
-					<option value="3">25c</option>
-					<option value="4">50c</option>
-					<option value="5">75c</option>
-					<option value="6">$1</option>
-				</select>
-				per day </h5>
-
-			</div>
-
-		
-			<div class="col-xs-12">
-					<hr></hr>
-
-				<p>Settings are set to Automatic saving. See <a href="/settings">Settings</a> for more info or to change option.</p>
-			</div>
-			{{/unless}}
 
 			{{#if finished}}
 			<div class="col-xs-12">
 				<button type="button" class="center-block btn btn-lg btn-{{#if finished}}info{{else}}default{{/if}}" {{#unless finished}}disabled{{/unless}}>DONATE</button>
 			</div>
+
+			{{else}}
+			<div class="col-xs-12">
+				<h5 >I want to add to this cause:</h5>
+				<div class="row">
+					<div class="col-xs-2">
+						<button id="btn-choice-1" type="button" class="btn btn-default btn-circle">25c</button>
+					</div>
+					<div class="col-xs-2">
+						<button id="btn-choice-2" type="button" class="btn btn-default btn-circle">$1</button>
+					</div>
+					<div class="col-xs-8">
+						<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+								<button id="btn-save" type="button" class="btn btn-default btn-info btn-sm-center" disabled>SAVE</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			{{/if}}
-			
 
 		</div>
 		{{/with}}

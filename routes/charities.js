@@ -1,9 +1,16 @@
 var fullData = require('./index').fullData;
 
 exports.view = function(req, res) { 
+
+	var empty = false;
+	if (fullData['saved_causes'].length == 0) {
+		empty = true;
+	}
+
 	res.render('charities', {
 		"page_charities" : 1,
-		"fullData": fullData
+		"fullData": fullData,
+		"empty" : empty
 	});
 
 	console.log(fullData);
@@ -29,6 +36,7 @@ exports.addMyCause = function(req, res) {
 			var myCause = {
 				"charity" : charity['charity'],
 				"percentage" : "0",
+				"money_saved" : "$0.00",
 				"id_saving_amount": "1",
 				"saving_amount" : "15c",
 				"finished" : ""
@@ -46,6 +54,7 @@ exports.addMyCause = function(req, res) {
 			var myCause = {
 				"charity" : charity['charity'],
 				"percentage" : "0",
+				"money_saved" : "$0.00",
 				"id_saving_amount": "1",
 				"saving_amount" : "15c",
 				"finished" : ""

@@ -162,6 +162,14 @@
 		</div>
 
 		<div class="row" id="row-favorites" {{#unless session.showMyFavorites}} hidden {{/unless}}>
+			{{#if empty}}
+			<div class="col-xs-12">
+				<h5>You haven't added any causes to your favorites. </h5>
+				<p>Go to All Charities list and click on the heart on a cause you like so you can save it for later and easily find it when you're ready to start saving for it.</p>
+			</div>
+
+			{{else}}
+
 			{{#each fullData.saved_causes}}
 			<div class="col-xs-6 col-md-3 charity" id="charity{{@index}}">
 				<div class="panel panel-default">
@@ -210,6 +218,8 @@
 				</div>
 			</div>
 			{{/each}}
+
+			{{/if}}
 		</div>
   	</div>
 

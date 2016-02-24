@@ -1,0 +1,9 @@
+{
+	"id" : "1",
+	"firstname" : "Andres",
+	"lastname" : "Santana",
+	"name" : "Andres Santana",
+	"bank_account" : "XXXXXX1234",
+	"balance" : "14.00",
+	"notifications" : true
+}

@@ -19,6 +19,9 @@ var settings		= require('./routes/settings');
 var login 			= require('./routes/login');
 var createacct      = require('./routes/createacct');
 
+//My History
+var history			= require('./routes/history');
+
 //My Cause Detail
 var my_cause_detail	= require('./routes/my_cause_detail');
 
@@ -67,35 +70,41 @@ if ('development' == app.get('env')) {
 }
 
 localQuery = function(req, res, next) {
-  res.locals.session = req.session;
-  next();
+	res.locals.session = req.session;
+	next();
 };
 
 
 
 // Add routes here
 //Main Tabs
-app.get('/', index.view);
-app.get('/saved_causes', saved_causes.view);
+app.get('/', localQuery, index.view);
+app.get('/saved_causes', localQuery, saved_causes.view);
 app.get('/charities', localQuery, charities.view);
-app.get('/achievements', achievements.view);
-app.get('/settings', settings.view);
+app.get('/achievements', localQuery, achievements.view);
+app.get('/settings', localQuery, settings.view);
 
 //Login and Signup
-app.get('/login', login.view);
-app.get('/createacct', createacct.view);
+app.get('/login', localQuery, login.view);
+app.get('/createacct', localQuery, createacct.view);
+
+//My History
+app.get('/history', localQuery, history.view);
 
 //My Cause Detail
-app.get('/my_cause_detail/:id_cause', my_cause_detail.view);
+app.get('/my_cause_detail/:id_cause', localQuery, my_cause_detail.view);
 
 //Cause Detail
 app.get('/cause_detail/:source/:id_cause', localQuery, cause_detail.view);
  
 //Ajax
-app.get('/charities/toggle_favorite', charities_add_favorite.toggleFavorite);
-app.get('/charities/add_my_cause', charities.addMyCause);
-app.get('/my_cause_detail/:id_cause/:id_saving_amount/:saving_amount', my_cause_detail.updateSavingAmount);
-app.get('/session/update_session', update_session.updateSession);
+app.get('/charities/toggle_favorite', localQuery, charities_add_favorite.toggleFavorite);
+app.get('/charities/add_my_cause', localQuery, charities.addMyCause);
+app.get('/my_cause_detail/:id_cause/:id_saving_amount/:saving_amount', localQuery, my_cause_detail.updateSavingAmount);
+app.get('/session/update_session', localQuery, update_session.updateSession);
+app.get('/settings/transferToBank', localQuery, settings.transferToBank);
+app.post('/settings/addBankAccount', localQuery, settings.addBankAccount);
+app.get('/settings/deleteBankAccount', localQuery, settings.deleteBankAccount);
 
 //app.get('/add', add.addFriend);
 // Example route

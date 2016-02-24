@@ -11,33 +11,6 @@ $(document).ready(function() {
 function initializePage() {
 
 	/*
-	 * Click listeners for Auto/Manual Segments
-	 */
-	$("#btn_group_auto").click(function(e) {
-
-		//money tab selected, check if active
-		if (! $(this).hasClass("active")) {
-			//not active, set active
-			$(this).toggleClass("active");
-
-			//unset active from other btn
-			$("#btn_group_manual").toggleClass("active");
-		}
-	});
-
-	$("#btn_group_manual").click(function(e) {
-		
-		//days tab selected, check if active
-		if (! $(this).hasClass("active")) {
-			//not active, set active
-			$(this).toggleClass("active");
-
-			//unset active from other btn
-			$("#btn_group_auto").toggleClass("active");
-		}
-	});
-
-	/*
 	 * Click listeners for Notifications On/Off Segments
 	 */
 	$("#btn_group_notification_on").click(function(e) {

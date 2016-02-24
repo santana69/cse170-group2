@@ -11,6 +11,7 @@
 				"url": "http://charity1.com" 
 			},
 			"percentage" : "100",
+			"money_saved" : "$5.00",
 			"id_saving_amount": "3",
 			"saving_amount" : "25c",
 			"finished" : "1"
@@ -26,6 +27,7 @@
 				"url": "http://charity2.com" 
 			},
 			"percentage" : "80",
+			"money_saved" : "$8.00",
 			"id_saving_amount": "3",
 			"saving_amount" : "25c",
 			"finished" : ""
@@ -36,11 +38,12 @@
 				"name" : "Charity 8",
 				"action": "PROVIDE",
 				"description": "safe water to 8 community members",
-				"cost": "$3.00",
+				"cost": "$4.00",
 				"image": "/images/not_available.jpg",
 				"url": "http://charity8.com" 
 			},
-			"percentage" : "35",
+			"percentage" : "25",
+			"money_saved" : "$1.00",
 			"id_saving_amount": "4",
 			"saving_amount" : "50c",
 			"finished" : ""
@@ -143,5 +146,8 @@
 			"my_cause" : "",
 			"favorite" : ""
 		}
+	],
+	"history" : [
+
 	]
 }

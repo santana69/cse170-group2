@@ -19,4 +19,54 @@ function initializePage() {
 	$(".btn").mouseup(function(){
     	$(this).blur();
 	});
+
+	/*
+	 * Click listeners for money choices
+	 */
+	$("#btn-choice-1").click(function(e) {
+
+		//check if active
+		if ($(this).hasClass("active")) {
+			//active, unset active
+			$(this).toggleClass("active");
+
+			//set save button disabled
+			$('#btn-save').attr('disabled', true);
+		}
+		else {
+			//not active, set active
+			$(this).toggleClass("active");
+
+			//remove active from other button (if applicable)
+			$('#btn-choice-2').removeClass('active');
+
+			//set save button enabled
+			$('#btn-save').attr('disabled', false);
+		}
+	});
+
+	/*
+	 * Click listeners for money choices
+	 */
+	$("#btn-choice-2").click(function(e) {
+
+		//check if active
+		if ($(this).hasClass("active")) {
+			//active, unset active
+			$(this).toggleClass("active");
+
+			//set save button disabled
+			$('#btn-save').attr('disabled', true);
+		}
+		else {
+			//not active, set active
+			$(this).toggleClass("active");
+
+			//remove active from other button (if applicable)
+			$('#btn-choice-1').removeClass('active');
+
+			//set save button enabled
+			$('#btn-save').attr('disabled', false);
+		}
+	});
 }

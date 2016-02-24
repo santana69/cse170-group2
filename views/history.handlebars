@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>My History</title>	
+	
+	<!-- Add Common Head tags and Base CSS files -->
+	{{> head_css}}
+
+</head>
+
+<body>
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="navbar-brand navbar-brand-centered">My History</div>
+				
+			</div>
+			<a type="button" class="btn btn-default navbar-btn" href="/">
+				<span class="glyphicon glyphicon-remove"></span>
+			</a>
+		</div>
+	</nav>
+
+  	<div class="container">
+  		{{#if empty}}
+  			<!-- No history entries -->
+  			<h4 class="text-center">You haven't completed any causes yet :(</h4>
+  		{{else}}
+
+  		{{/if}}
+  	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
+	<script src="/js/bootstrap.min.js"></script>
+
+	<!-- Our custom js -->
+	<script src="/js/history.js"></script>
+
+</body>
+</html>

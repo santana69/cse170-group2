@@ -1,0 +1,27 @@
+[
+	{
+		"name" : "First Step",
+		"description" : "Open an account with Carity.",
+		"completed" : true
+	},
+	{
+		"name" : "Getting Started",
+		"description" : "Add your first cause.",
+		"completed" : false
+	},
+	{
+		"name" : "Start Small",
+		"description" : "Save some money towards one of your causes.",
+		"completed" : false
+	},
+	{
+		"name" : "First Donation",
+		"description" : "Complete your first cause and donate to it.",
+		"completed" : false
+	},
+	{
+		"name" : "Go Big or Go Home",
+		"description" : "Save towards four causes at a time.",
+		"completed" : false
+	}
+]

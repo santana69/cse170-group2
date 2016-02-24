@@ -2,11 +2,16 @@
 var fullData = require('../static_json/data.json');
 exports.fullData = fullData;
 
+var user = require('../static_json/user.json');
+exports.user = user;
+
 exports.view = function(req, res){
+
 	//console.log(data);
 	res.render('index', {
 		'page_home' : 1,
-		"fullData": fullData
+		"fullData": fullData,
+		"user" : user
 	});
 
 	for (var i=0; i < fullData.my_causes.length; ++i) {
