@@ -98,13 +98,19 @@ app.get('/my_cause_detail/:id_cause', localQuery, my_cause_detail.view);
 app.get('/cause_detail/:source/:id_cause', localQuery, cause_detail.view);
  
 //Ajax
+app.get('/addMoneyToCause/:source/:id_cause/:amountToAdd', localQuery, index.addMoneyToCause);
 app.get('/charities/toggle_favorite', localQuery, charities_add_favorite.toggleFavorite);
 app.get('/charities/add_my_cause', localQuery, charities.addMyCause);
 app.get('/my_cause_detail/:id_cause/:id_saving_amount/:saving_amount', localQuery, my_cause_detail.updateSavingAmount);
+app.get('/my_cause_detail/deleteCause/:id_cause', localQuery, my_cause_detail.deleteCause);
 app.get('/session/update_session', localQuery, update_session.updateSession);
 app.get('/settings/transferToBank', localQuery, settings.transferToBank);
 app.post('/settings/addBankAccount', localQuery, settings.addBankAccount);
 app.get('/settings/deleteBankAccount', localQuery, settings.deleteBankAccount);
+
+app.post('/createacct/attemptSignUp', localQuery, createacct.attemptSignUp);
+
+//app.post('/login/attemptLogin', localQuery, login.attemptLogin);
 
 //app.get('/add', add.addFriend);
 // Example route

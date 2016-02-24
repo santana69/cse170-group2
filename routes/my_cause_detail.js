@@ -16,3 +16,26 @@ exports.updateSavingAmount = function(req, res) {
 	fullData.my_causes[req.params.id_cause]['id_saving_amount'] = req.params.id_saving_amount;
 	fullData.my_causes[req.params.id_cause]['saving_amount'] = req.params.saving_amount;
 }
+
+exports.deleteCause = function(req, res) {
+	res.render('empty');
+
+	//find charity to set not my_cause
+	var charity = fullData.my_causes[req.params.id_cause].charity;
+
+	for (var i=0; i<fullData['charities'].length; ++i) {
+		var currCharity = fullData['charities'][i];
+		if (currCharity.charity['id'] == charity['id']) {
+			//found it. set my cause no
+			currCharity.my_cause = "";
+		}
+	}
+
+	fullData.my_causes.splice(req.params.id_cause,1);
+
+	fullData.my_causes.push({});
+
+	console.log(fullData);
+
+	res.redirect('/');
+}

@@ -25,6 +25,23 @@
 		</div>
 	</nav>
 
+	<div class="modal fade" id="deleteCauseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Delete Cause</h4>
+				</div>
+				<div class="modal-body">
+					By deleting this cause, any money you saved towards it will still remain in your account for later use. If you wish to donate to this cause later on, you will have to start saving from scratch. Are you sure you want to delete this cause?s
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
+					<a href="/my_cause_detail/deleteCause/{{id_cause}}" class="btn btn-danger btn-primary">DELETE</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container-fluid">
 		<div class="jumbotron" style="padding: 0px; margin-top: -15px;">
 			<img src="{{cause.charity.image}}" class="img img-responsive center-block" style="height: 150px; ">
@@ -40,7 +57,7 @@
 				  <dt>Description:</dt>
 				  <dd><span class="text-uppercase">{{action}}</span> {{description}}</dd>
 				  <dt>Donation</dt>
-				  <dd>{{cost}}</dd>
+				  <dd>${{cost}}</dd>
 				  <dt>More Info:</dt>
 				  <dd><a href="{{url}}">{{url}}</a></dd>
 				</dl>
@@ -50,8 +67,8 @@
 			<div class="col-xs-12">
 				<div class="my-progress-bar progress">
 					<div class="progress-bar progress-bar-{{color}} progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%; {{#if progress-empty}}color:black;{{/if}}">
-					{{money_saved}}
-					<span class="sr-only">Saved {{money_saved}} so far</span>
+					${{money_saved}}
+					<span class="sr-only">Saved ${{money_saved}} so far</span>
 					</div>
 				</div>
 			</div>
@@ -66,10 +83,10 @@
 				<h5 >I want to add to this cause:</h5>
 				<div class="row">
 					<div class="col-xs-2">
-						<button id="btn-choice-1" type="button" class="btn btn-default btn-circle">25c</button>
+						<button id="btn-choice-1" type="button" class="btn btn-default btn-circle btn-choice" value="0.25">25c</button>
 					</div>
 					<div class="col-xs-2">
-						<button id="btn-choice-2" type="button" class="btn btn-default btn-circle">$1</button>
+						<button id="btn-choice-2" type="button" class="btn btn-default btn-circle btn-choice" value="1.00">$1</button>
 					</div>
 					<div class="col-xs-8">
 						<div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -82,6 +99,19 @@
 			</div>
 			{{/if}}
 
+			
+		</div>
+
+		<hr></hr>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="btn-group btn-group-justified" role="group" aria-label="...">
+					<div class="btn-group" role="group">
+						<button id="btn-delete" type="button" class="btn btn-default btn-danger" data-toggle="modal" data-target="#deleteCauseModal">DELETE CAUSE</button>
+					</div>
+				</div>
+			</div>
 		</div>
 		{{/with}}
   	</div>

@@ -68,4 +68,12 @@ function initializePage() {
 
 		window.open("/my_cause_detail/" + $(this).attr('id').substr('cause'.length), "_self");
 	});
+
+	$('.btn-save').click(function(e) {
+
+		var id_cause = $(this).closest('.my-panel').find('.my-causes-body').attr('id').substr('cause'.length);
+		var amountToAdd = $(this).closest('.row').find('.btn-choice.active').attr('value');
+
+		window.open("/addMoneyToCause/index/"+id_cause+"/"+amountToAdd, "_self");
+	});
 }

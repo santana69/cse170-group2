@@ -3,6 +3,8 @@
 	"firstname" : "Andres",
 	"lastname" : "Santana",
 	"name" : "Andres Santana",
+	"email" : "santanag.andres@gmail.com",
+	"password" : "1234",
 	"bank_account" : "XXXXXX1234",
 	"balance" : "14.00",
 	"notifications" : true

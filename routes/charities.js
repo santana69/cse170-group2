@@ -1,4 +1,5 @@
 var fullData = require('./index').fullData;
+var achievements = require('./achievements').achievements;
 
 exports.view = function(req, res) { 
 
@@ -26,6 +27,9 @@ exports.addMyCause = function(req, res) {
 		res.json({"result" : "full"});
 	}
 	else {
+		//we're adding a cause, so we set achievement
+		achievements[1].completed = true;
+		
 		if (source == "saved_causes") {
 			var charity = fullData['saved_causes'][req.query.index_charity];
 
@@ -36,13 +40,28 @@ exports.addMyCause = function(req, res) {
 			var myCause = {
 				"charity" : charity['charity'],
 				"percentage" : "0",
-				"money_saved" : "$0.00",
+				"money_saved" : "0.00",
 				"id_saving_amount": "1",
 				"saving_amount" : "15c",
 				"finished" : ""
 			};
-			fullData['my_causes'][fullData['my_causes'].length - 1] = myCause;
+
+			//find which index to add new cause to
+			var index = 3;
+			for (var i=0; i < fullData['my_causes'].length; ++i) {
+				if (!fullData['my_causes'][i].hasOwnProperty('charity')) {
+					index = i;
+					break;
+				}
+			}
+			fullData['my_causes'][index] = myCause;
 			console.log(fullData);
+
+			//check if index == 3. Means we have 4 causes at a time
+			if (index == 3) {
+				//set achievement
+				achievements[4].completed = true;
+			}
 		}
 		else if (source == "charities") {
 			var charity = fullData['charities'][req.query.index_charity];
@@ -54,13 +73,28 @@ exports.addMyCause = function(req, res) {
 			var myCause = {
 				"charity" : charity['charity'],
 				"percentage" : "0",
-				"money_saved" : "$0.00",
+				"money_saved" : "0.00",
 				"id_saving_amount": "1",
 				"saving_amount" : "15c",
 				"finished" : ""
 			};
-			fullData['my_causes'][fullData['my_causes'].length - 1] = myCause;
+
+			//find which index to add new cause to
+			var index = 3;
+			for (var i=0; i < fullData['my_causes'].length; ++i) {
+				if (!fullData['my_causes'][i].hasOwnProperty('charity')) {
+					index = i;
+					break;
+				}
+			}
+			fullData['my_causes'][index] = myCause;
 			console.log(fullData);
+
+			//check if index == 3. Means we have 4 causes at a time
+			if (index == 3) {
+				//set achievement
+				achievements[4].completed = true;
+			}
 		}
 
 		res.json({"result": "success"});

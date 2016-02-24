@@ -69,4 +69,11 @@ function initializePage() {
 			$('#btn-save').attr('disabled', false);
 		}
 	});
+
+	$('#btn-save').click(function(e) {
+
+		var amountToAdd = $(this).closest('.row').find('.btn-choice.active').attr('value');
+
+		window.open("/addMoneyToCause/my_cause_detail/"+id_cause+"/"+amountToAdd, "_self");
+	});
 }
