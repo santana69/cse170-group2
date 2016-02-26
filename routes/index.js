@@ -7,10 +7,131 @@ exports.user = user;
 
 var achievements = require('./achievements').achievements;
 
+var currentHomePage = {"current": "home"};
+exports.currentHomePage = currentHomePage;
+
 exports.view = function(req, res){
+
+	if (currentHomePage.current == "homeHistoryOnBottom") {
+		res.redirect('/homeHistoryOnBottom');
+	}
+	else if (currentHomePage.current == "homeDeleteCause") {
+		res.redirect('/homeDeleteCause');
+	}
+	else {
+		res.redirect('/home');
+	}
 
 	//console.log(data);
 	res.render('index', {
+		'page_home' : 1,
+		"fullData": fullData,
+		"user" : user
+	});
+
+	for (var i=0; i < fullData.my_causes.length; ++i) {
+		var cause = fullData.my_causes[i];
+		if (cause.percentage == 100) {
+			cause['color'] = "success";
+		}
+		else if (cause.percentage <= 40) {
+			cause['color'] = "danger";
+		}
+		else {
+			cause['color'] = "warning";
+		}
+
+		//progress-empty is used to set color of progressbar text to black instead of white for visibility
+		if (parseInt(cause.percentage) <= 28) {
+			cause['progress-empty'] = true;
+		}
+		else {
+			cause['progress-empty'] = false;
+		}
+	}
+	console.log(fullData);
+};
+
+//Version to permit to come back to original homepage
+exports.home = function(req, res) {
+	//if we get here, we will remain with this as homepage
+	//so we set current homepage to redirect here from every other link
+	currentHomePage.current = "home";
+
+	//console.log(data);
+	res.render('index', {
+		'page_home' : 1,
+		"fullData": fullData,
+		"user" : user
+	});
+
+	for (var i=0; i < fullData.my_causes.length; ++i) {
+		var cause = fullData.my_causes[i];
+		if (cause.percentage == 100) {
+			cause['color'] = "success";
+		}
+		else if (cause.percentage <= 40) {
+			cause['color'] = "danger";
+		}
+		else {
+			cause['color'] = "warning";
+		}
+
+		//progress-empty is used to set color of progressbar text to black instead of white for visibility
+		if (parseInt(cause.percentage) <= 28) {
+			cause['progress-empty'] = true;
+		}
+		else {
+			cause['progress-empty'] = false;
+		}
+	}
+	console.log(fullData);
+};
+
+//Alternate version with history button on bottom
+exports.homeHistoryOnBottom = function(req, res) {
+	//if we get here, we will remain with this as homepage
+	//so we set current homepage to redirect here from every other link
+	currentHomePage.current = "homeHistoryOnBottom";
+
+	//console.log(data);
+	res.render('index_history_bottom', {
+		'page_home' : 1,
+		"fullData": fullData,
+		"user" : user
+	});
+
+	for (var i=0; i < fullData.my_causes.length; ++i) {
+		var cause = fullData.my_causes[i];
+		if (cause.percentage == 100) {
+			cause['color'] = "success";
+		}
+		else if (cause.percentage <= 40) {
+			cause['color'] = "danger";
+		}
+		else {
+			cause['color'] = "warning";
+		}
+
+		//progress-empty is used to set color of progressbar text to black instead of white for visibility
+		if (parseInt(cause.percentage) <= 28) {
+			cause['progress-empty'] = true;
+		}
+		else {
+			cause['progress-empty'] = false;
+		}
+	}
+	console.log(fullData);
+};
+
+//Alternate version with delete cause option
+exports.homeDeleteCause = function(req, res) {
+	//if we get here, we will remain with this as homepage
+	//so we set current homepage to redirect here from every other link
+	currentHomePage.current = "homeDeleteCause";
+
+	//console.log(data);
+	res.render('index_delete_cause', {
 		'page_home' : 1,
 		"fullData": fullData,
 		"user" : user

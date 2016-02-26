@@ -36,7 +36,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
-					<a href="/my_cause_detail/deleteCause/{{id_cause}}" class="btn btn-danger btn-primary">DELETE</a>
+					<a id="deleteCauseAnchor" href="/my_cause_detail/deleteCause/{{id_cause}}" class="btn btn-danger btn-primary">DELETE</a>
 				</div>
 			</div>
 		</div>
@@ -121,9 +121,12 @@
 	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
 	<script src="/js/bootstrap.min.js"></script>
 
+	{{> googleAnalytics}}
+	
 	<!-- Our custom js -->
 	<script>
 		var id_cause = "{{id_cause}}";
+		var currentHomePage = "{{currentHomePage}}";
 		$('#save_amount').val("{{cause.id_saving_amount}}");
 	</script>
 	<script src="/js/my_cause_detail.js"></script>

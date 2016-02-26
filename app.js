@@ -78,6 +78,12 @@ localQuery = function(req, res, next) {
 
 
 // Add routes here
+
+//Alternate Versions
+app.get('/homeHistoryOnBottom', localQuery, index.homeHistoryOnBottom);
+app.get('/homeDeleteCause', localQuery, index.homeDeleteCause);
+app.get('/home', localQuery, index.home); //original
+
 //Main Tabs
 app.get('/', localQuery, index.view);
 app.get('/saved_causes', localQuery, saved_causes.view);

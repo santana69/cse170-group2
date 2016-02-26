@@ -1,12 +1,18 @@
 var fullData = require('./index').fullData;
 
+var currentHomePage = require('./index').currentHomePage;
+
 exports.view = function(req, res) { 
+
 
 	res.render('my_cause_detail', {
 		"id_cause": req.params.id_cause,
-		"cause": fullData.my_causes[req.params.id_cause]
+		"cause": fullData.my_causes[req.params.id_cause],
+		"currentHomePage" : currentHomePage.current
 	});
 
+	console.log("wut"+currentHomePage.current);
+	console.log(fullData.charities[0]);
 	console.log(fullData.my_causes[req.params.id_cause]);
  }
 

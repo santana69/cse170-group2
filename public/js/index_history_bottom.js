@@ -79,7 +79,7 @@ function initializePage() {
 		var timeElapsed = now - loadDate;
 
 		//send time event to GA
-		ga('send', 'timing', 'save', 'home', timeElapsed);
+		ga('send', 'timing', 'save', 'homeHistoryOnBottom', timeElapsed);
 
 		var id_cause = $(this).closest('.my-panel').find('.my-causes-body').attr('id').substr('cause'.length);
 		var amountToAdd = $(this).closest('.row').find('.btn-choice.active').attr('value');

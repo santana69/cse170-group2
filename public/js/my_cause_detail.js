@@ -76,4 +76,9 @@ function initializePage() {
 
 		window.open("/addMoneyToCause/my_cause_detail/"+id_cause+"/"+amountToAdd, "_self");
 	});
+
+	$('#deleteCauseAnchor').click(function(e) {
+
+		ga('send', 'event', 'deleteCause', 'myCauseDetail+'+currentHomePage);
+	});
 }
