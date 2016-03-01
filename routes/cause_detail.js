@@ -1,6 +1,7 @@
-var fullData = require('./index').fullData;
+//var fullData = require('./index').fullData;
 
 exports.view = function(req, res) {    
+	var fullData = req.fullData;
 
 	var cause;
 	var source;

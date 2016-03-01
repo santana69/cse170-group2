@@ -1,7 +1,9 @@
-var fullData = require('./index').fullData;
-var user = require('./index').user;
+//var fullData = require('./index').fullData;
+//var user = require('./index').user;
 
 exports.view = function(req, res) {   
+
+	var fullData = req.fullData;
 
 	var empty = false;
 	if (fullData['history'].length == 0) {
@@ -9,8 +11,6 @@ exports.view = function(req, res) { 
 	}
 
 	res.render('history', {
-		"fullData" : fullData,
-		"user" : user,
 		"empty" : empty
 	});
  }

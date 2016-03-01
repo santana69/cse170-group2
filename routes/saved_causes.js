@@ -1,9 +1,10 @@
-var fullData = require('./index').fullData;
+//var fullData = require('./index').fullData;
 
-exports.view = function(req, res) {    
+exports.view = function(req, res) { 
+	var fullData = req.fullData;
+
 	res.render('saved_causes', {
-		"page_saved_causes" : 1,
-		"fullData": fullData
+		"page_saved_causes" : 1
 	});
 /*
 	var newVar = {

@@ -1,0 +1,66 @@
+[
+	{
+		"name" : "Charity 1",
+		"action": "SAVE",
+		"description": "3 puppies from the streets",
+		"cost": "500",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity1.com"
+	},
+	{
+		"name" : "Charity 2",
+		"action": "PROTECT",
+		"description": "6 people from malaria",
+		"cost": "1000",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity2.com"
+	},
+	{
+		"name" : "Charity 3",
+		"action": "BUY",
+		"description": "10 mosquito nets for children",
+		"cost": "1500",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity3.com"
+	},
+	{
+		"name" : "Charity 4",
+		"action": "HELP",
+		"description": "the Native American communities",
+		"cost": "300",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity4.com"
+	},
+	{
+		"name" : "Charity 5",
+		"action": "PROVIDE",
+		"description": "electricity to underrepresented countries",
+		"cost": "800",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity5.com" 
+	},
+	{
+		"name" : "Charity 6",
+		"action": "HELP",
+		"description": "8 people get off the streets",
+		"cost": "400",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity6.com"
+	},
+	{
+		"name" : "Charity 7",
+		"action": "GIVE",
+		"description": "100 blankets to homeless people",
+		"cost": "300",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity7.com" 
+	},
+	{
+		"name" : "Charity 8",
+		"action": "PROVIDE",
+		"description": "safe water to 8 community members",
+		"cost": "400",
+		"image": "/images/not_available.jpg",
+		"url": "http://charity8.com" 
+	}
+]
