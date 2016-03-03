@@ -10,7 +10,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	//time when page was loaded
-	var loadDate = new Date();
+	var loadDate = new Date().getTime();
 
 
 	//To prevent buttons from staying focused after press
@@ -75,7 +75,7 @@ function initializePage() {
 
 	$('.btn-save').click(function(e) {
 		//calculate time elapsed since page load
-		var now = new Date();
+		var now = new Date().getTime();
 		var timeElapsed = now - loadDate;
 
 		//send time event to GA

@@ -287,12 +287,12 @@ requireLogin = function(req, res, next) {
 // Add routes here
 
 //Alternate Versions
-app.get('/homeHistoryOnBottom', requireLogin, index.homeHistoryOnBottom);
-app.get('/homeDeleteCause', requireLogin, index.homeDeleteCause);
-app.get('/home', requireLogin, index.home); //original
+app.get('/homeHistoryOnBottom', index.homeHistoryOnBottom);
+app.get('/homeDeleteCause', index.homeDeleteCause);
+app.get('/home', index.home); //original
 
 //Main Tabs
-app.get('/', requireLogin, index.view);
+app.get('/', index.view);
 app.get('/saved_causes', requireLogin, saved_causes.view);
 app.get('/charities', requireLogin, charities.view);
 app.get('/achievements', requireLogin, achievements.view);
