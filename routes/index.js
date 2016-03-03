@@ -10,204 +10,6 @@ exports.currentHomePage = currentHomePage;
 //require DB model
 var models = require('../models');
 
-function requireLogin(req, res) {
-	//console.log("entre");
-	//Check if session exists
-	if (req.session && req.session.user) {
-		//console.log("SESSION: ", req.session.user);
-		//Lookup user in the DB using the userID in session
-		models.User
-			.find({ "_id" : req.session.user._id })
-			.populate("my_causes.charity")
-			.populate("history.charity")
-			.limit(1)
-			.exec(function(err, user) {
-				if (user && user.length > 0) {
-					//console.log("HUHUH " + user[0]);
-					//User found. Set req user
-					req.user = user[0];
-					delete req.user.password; //delete password from session
-
-					//refresh session value with (potentially new) user data
-					req.session.user = req.user;
-
-					//Expose user to template
-					res.locals.user = req.user;
-
-					//Generate fullData json
-					var fullData = {
-						"history" : req.user.history,
-						"my_causes" : req.user.my_causes
-					};
-
-					//Get charities and saved_causes
-					//Load Charities
-					models.Charity
-						.find({
-							"enabled" : true
-						})
-						//.lean() //Causes query to get plain JSON object (modifiable)
-						.exec(function(err, charities) {
-							if (err) {
-								console.log("App: error on loadCharities = ", err);
-								//res.send(500);
-
-								delete req.session.user;
-								delete req.user;
-
-								//Redirect to login
-								res.redirect('/login');
-							}
-							else {
-								//Find favorite and my_cause statuses of charities
-								var fullCharities = [];
-								var saved_causes = [];
-								for (var i=0; i<charities.length; ++i) {
-									var charity = {
-										"charity" : charities[i]
-									}
-
-									//Since req.user.my_causes contains populated charity objects, we map a new array with only the ids
-									var charIds = req.user.my_causes.map(function(cause) { return cause.charity._id.toString(); });
-
-									//Check if charity id in charIds
-									if ( charIds.indexOf(charity.charity._id.toString()) != -1) {
-										//Found charity id in user's my_causes, set as my_cause
-										charity['my_cause'] = "1";
-									}
-									else {
-										charity['my_cause'] = "";
-									}
-
-									//Check if charity id in user favorites
-									if ( req.user.favorites.indexOf(charity.charity._id) != -1) {
-										//Found charity id in user's favorites, set as favorite
-										charity['favorite'] = "1";
-
-										//Since we have it in favorites, we add it to saved_causes
-										saved_causes.push(charity);
-									}
-									else {
-										charity['favorite'] = "";
-									}
-
-
-
-									// if (charity.charity.name == "Charity 8") {
-									// 	//Add my_cause
-									// 	var my_cause = {
-									// 		"charity"		: charity.charity._id,
-									// 		"percentage"	: 25,
-									// 		"money_saved"	: 100
-									// 	};
-									// 	models.User.findByIdAndUpdate(
-									// 		req.user._id,
-									// 		{$push: {"my_causes" : my_cause}},
-									// 		{safe : true},
-									// 		function(err, model) {console.log(err);}
-									// 	);
-									// }
-
-									fullCharities.push(charity);
-								}
-
-								// console.log("CHARITIES: ", fullCharities);
-								// console.log("SAVEDCAUSES: ", saved_causes);
-
-								
-								fullData['charities'] = fullCharities;
-								fullData['saved_causes'] = saved_causes;
-							}
-
-							//Go through my_causes and add empty json objects if necessary
-							var my_causes = [];
-							var myCausesLen = req.user.my_causes.length;
-							for (var i=0; i < 4; ++i) {
-								if (i < myCausesLen) {
-									var currCause = req.user.my_causes[i];
-
-									var cause = {
-										"_id" : currCause._id,
-										"charity" : currCause.charity,
-										"finished" : currCause.finished,
-										"money_saved" : currCause.money_saved,
-										"percentage" : currCause.percentage
-									}
-
-									if (cause.percentage == 100) {
-										cause['color'] = "success";
-									}
-									else if (cause.percentage <= 40) {
-										cause['color'] = "danger";
-									}
-									else {
-										cause['color'] = "warning";
-									}
-
-									//progress-empty is used to set color of progressbar text to black instead of white for visibility
-									if (parseInt(cause.percentage) <= 28) {
-										cause['progress-empty'] = true;
-									}
-									else {
-										cause['progress-empty'] = false;
-									}
-
-									my_causes.push(cause);
-								}
-								else {
-									my_causes.push({
-										"color" : "warning",
-										"progress-empty" : false
-									});
-								}
-							}
-							fullData['my_causes'] = my_causes;
-
-							console.log(fullData);
-
-							//Make session available locally
-							res.locals.session = req.session;
-
-							//Add to req
-							req.fullData = fullData;
-
-							//Make fullData available locally
-							res.locals.fullData = fullData;
-
-							//Finish process of middleware and run the route
-							//next();
-							return;
-						});
-				}
-				else {
-					delete req.session.user;
-					delete req.user;
-
-					//Make session available locally
-					res.locals.session = req.session;
-
-					//Finish process of middleware and run the route
-					//next();
-
-					//Redirect to login
-					res.redirect('/login');
-				}
-			});
-	}
-	else {
-		//Make session available locally
-		res.locals.session = req.session;
-
-		//No session or user in session. Just continue.
-		delete req.session.user;
-		delete req.user;
-		//next();
-
-		//Redirect to login
-		res.redirect('/login');
-	}
-};
-
 exports.view = function(req, res){
 
 	if (currentHomePage.current == "homeHistoryOnBottom") {
@@ -257,7 +59,10 @@ exports.home = function(req, res) {
 	currentHomePage.current = "home";
 
 	//Verify login here
-	requireLogin(req, res);
+	if (req.redirect) {
+		res.redirect('/login');
+	}
+
 
 	//Get my_causes
 	// models.MyCause
@@ -318,7 +123,9 @@ exports.homeHistoryOnBottom = function(req, res) {
 	currentHomePage.current = "homeHistoryOnBottom";
 
 	//Verify login here
-	requireLogin(req, res);
+	if (req.redirect) {
+		res.redirect('/login');
+	}
 
 	var fullData = req.fullData;
 
@@ -357,8 +164,11 @@ exports.homeDeleteCause = function(req, res) {
 	currentHomePage.current = "homeDeleteCause";
 
 	//Verify login here
-	requireLogin(req, res);
-	
+	if (req.redirect) {
+		res.redirect('/login');
+	}
+
+
 	var fullData = req.fullData;
 
 	//console.log(data);
