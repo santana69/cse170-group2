@@ -1,0 +1,17 @@
+/*** SEGMENT CONTROL ***/
+
+#btn_group_notification_on, #btn_group_notification_off {
+     background-color: white;
+     border-color: #F2784B;
+     color: #F2784B;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+}
+
+#btn_group_notification_on.active, #btn_group_notification_on:active, #btn_group_notification_off.active, #btn_group_notification_off:active {
+     background-color: #F2784B;
+     border-color: #F2784B;
+     color: white;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+}

@@ -25,6 +25,39 @@
 		</div>
 	</nav>
 
+	<div class="modal fade" id="donationConfirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Donation</h4>
+				</div>
+				<div class="modal-body">
+					Are you sure you want to donate to this cause?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					<button type="button" class="btn btn-info" data-dismiss="modal" data-toggle="modal" data-target="#donationModal">Donate</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Donation</h4>
+				</div>
+				<div class="modal-body">
+					You have successfully donated to this cause! Thank you!
+				</div>
+				<div class="modal-footer">
+					<a id="donateAnchor" href="/donateToCause/{{id_cause}}" class="btn btn-info">OK</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modal fade" id="deleteCauseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -32,7 +65,7 @@
 					<h4 class="modal-title" id="myModalLabel">Delete Cause</h4>
 				</div>
 				<div class="modal-body">
-					By deleting this cause, any money you saved towards it will still remain in your account for later use. If you wish to donate to this cause later on, you will have to start saving from scratch. Are you sure you want to delete this cause?s
+					By deleting this cause, any money you saved towards it will still remain in your account for later use. If you wish to donate to this cause later on, you will have to start saving from scratch. Are you sure you want to delete this cause?
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
@@ -42,65 +75,62 @@
 		</div>
 	</div>
 
-	<div class="container-fluid">
-		<div class="jumbotron" style="padding: 0px; margin-top: -15px;">
-			<img src="{{cause.charity.image}}" class="img img-responsive center-block" style="height: 150px; ">
-		</div>
+	<div class="jumbotron" style="background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0,0.5)), url({{cause.charity.image}}) center no-repeat; background-size: cover;">
+		<h5 class="causes-cost"><span>${{cause.money_saved}}/</span>${{cause.charity.cost}}</h5>
 	</div>
 
 	<div class="container">
 		{{#with cause}}
 		<div class="row">
-			{{#with charity}}
-			<div class="col-xs-12">
-				<dl class="thumbnail">
-				  <dt>Description:</dt>
-				  <dd><span class="text-uppercase">{{action}}</span> {{description}}</dd>
-				  <dt>Donation</dt>
-				  <dd>${{cost}}</dd>
-				  <dt>More Info:</dt>
-				  <dd><a href="{{url}}">{{url}}</a></dd>
-				</dl>
-			</div>
-			{{/with}}
 
-			<div class="col-xs-12">
-				<div class="my-progress-bar progress">
-					<div class="progress-bar progress-bar-{{color}} progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%; {{#if progress-empty}}color:black;{{/if}}">
-					${{money_saved}}
-					<span class="sr-only">Saved ${{money_saved}} so far</span>
-					</div>
+			<div class="my-progress-bar progress">
+				<div class="progress-bar progress-bar-{{color}} progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%; {{#if progress-empty}}color:black;{{/if}}">
+				<span class="money-saved">${{money_saved}}</span>
+				<span class="sr-only">Saved ${{money_saved}} so far</span>
 				</div>
 			</div>
 
 			{{#if finished}}
 			<div class="col-xs-12">
-				<button type="button" class="center-block btn btn-lg btn-{{#if finished}}info{{else}}default{{/if}}" {{#unless finished}}disabled{{/unless}}>DONATE</button>
+				<button type="button" class="donate-button center-block btn btn-lg" data-toggle="modal" data-target="#donationConfirmModal">DONATE! :)</button>
 			</div>
 
 			{{else}}
 			<div class="col-xs-12">
-				<h5 >I want to add to this cause:</h5>
-				<div class="row">
-					<div class="col-xs-2">
-						<button id="btn-choice-1" type="button" class="btn btn-default btn-circle btn-choice" value="0.25">25c</button>
+				<div class="btn-group btn-group-justified" role="group" aria-label="...">
+					<div class="btn-group" role="group">
+						<button id="btn-choice-1" type="button" class="btn btn-default btn-choice" value="0.25">25c</button>
 					</div>
-					<div class="col-xs-2">
-						<button id="btn-choice-2" type="button" class="btn btn-default btn-circle btn-choice" value="1.00">$1</button>
+					<div class="btn-group" role="group">
+						<button id="btn-choice-2" type="button" class="btn btn-default btn-choice" value="1.00">$1</button>
 					</div>
-					<div class="col-xs-8">
-						<div class="btn-group btn-group-justified" role="group" aria-label="...">
-							<div class="btn-group" role="group">
-								<button id="btn-save" type="button" class="btn btn-default btn-info btn-sm-center" disabled>SAVE</button>
-							</div>
-						</div>
+					<div class="btn-group" role="group">
+						<button id="btn-save" type="button" class="btn btn-default btn-info btn-md-center" disabled>SAVE</button>
 					</div>
 				</div>
 			</div>
 			{{/if}}
 
-			
 		</div>
+
+		{{#with charity}}
+		<div class="row">
+			<div id="cause-info" class="col-xs-2">
+				<img src="/images/icon_info.png">
+			</div>
+			<div id="cause-info-description" class="col-xs-10">
+				<h5><span class="text-uppercase">{{action}}</span> {{description}}</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div id="cause-url" class="col-xs-2">
+				<img src="/images/icon_at.png">
+			</div>
+			<div id="cause-url-description" class="col-xs-10">
+				<a href="{{url}}">{{url}}</a>
+			</div>
+		</div>
+		{{/with}}
 
 		<hr></hr>
 

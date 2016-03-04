@@ -1,23 +1,143 @@
+.jumbotron {
+     height: 180px;
+     padding: 0px; 
+     margin-top: -15px;
+     margin-bottom: 0;
+}
+
+.causes-cost {
+     position: absolute; 
+     top:190px; 
+     right:8px;
+     font-size: 22px;
+     color: white;
+     text-align: right;
+}
+
+.causes-cost span {
+     font-size: 20px;
+     font-weight: 100;
+}
+
 /*** DONATION BLOCK PRGORESS BAR ****/
 .my-progress-bar {
+     margin-top: 5px;
+     margin-bottom: 5px;
+     border-radius: 0;
+     height: 30px;
+}
+
+.progress-bar {
+     padding-top: 5px;
+}
+
+.money-saved {
+     padding-left: 4px;
+}
+
+/*** DONATION BLOCK COMPLETE ***/
+
+.donate-button, .donate-button:focus {
+     background-color: #F2784B;
+     color: white;
+     border-color: #F2784B;
+     border-radius: 0;
+     margin-top: 5px;
      margin-bottom: 10px;
 }
 
-.btn-circle {
-     width: 30px;
-     height: 30px;
-     text-align: center;
-     padding: 6px 0;
-     font-size: 12px;
-     line-height: 1.42;
-     border-radius: 15px;
+.donate-button:hover {
+     background-color: #D9714B;
+     color: white;
+     border-color: #D9714B;
 }
 
-.btn-sm-center {
-     width: 30px;
-     height: 30px;
+/*** DONATION BLOCK IN PROGRESS ***/
+
+.btn-md-center {
      text-align: center;
      padding: 6px 0;
-     font-size: 12px;
-     line-height: 1.42;
+}
+
+.btn-choice, #btn-save {
+     border-radius: 0;
+     margin-top: 5px;
+     margin-bottom: 10px;
+     font-size: 16px;
+}
+
+.btn-choice {
+     background-color: #D1D1D1;
+     border-color: #CCCCCC;
+     color: white;
+}
+
+.btn-choice:hover {
+     border-color: #EEEEEE;
+}
+
+.btn-choice.active, .btn-choice:active{
+     background-color: white;
+     border-color: #EEEEEE;
+     color: #F2784B;
+     box-shadow: none;
+     -webkit-box-shadow: none;
+}
+
+#btn-save, #btn-save:focus{
+     background-color: #F2784B;
+     border-color: #F2784B;
+     color: white;
+}
+
+#btn-save:hover {
+     background-color: #D9714B;
+     color: white;
+     border-color: #D9714B;
+}
+
+#btn-save:disabled {
+     background-color: white;
+     border-color: #CCCCCC;
+     color: #7A7A7A;
+}
+
+/*** Cause Detail ***/
+
+#cause-info {
+     background-color: #8C8C8C;
+     height: 50px;
+}
+
+#cause-info img {
+     padding-top: 11px;
+}
+
+#cause-info-description {
+     background-color: #ECECEC;
+     height: 50px;
+}
+
+#cause-info-description h5 {
+     color: #7A7A7A;
+}
+
+#cause-info-description span {
+     color: #F2784B;
+}
+
+#cause-url {
+     background-color: #D1D1D1;
+     height: 50px;
+}
+
+#cause-url img {
+     padding-top: 11px;
+}
+
+#cause-url-description {
+     background-color: white;
+     height: 50px;
+     padding-top: 15px;
+     border-bottom: 1px solid #D1D1D1;
 }

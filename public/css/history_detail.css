@@ -1,0 +1,67 @@
+.jumbotron {
+     height: 180px;
+     padding: 0px; 
+     margin-top: -15px;
+     margin-bottom: 0;
+}
+
+.causes-cost {
+     position: absolute; 
+     top:190px; 
+     right:8px;
+     font-size: 22px;
+     color: white;
+     text-align: right;
+}
+
+/*** DONATION BLOCK PRGORESS BAR ****/
+.my-progress-bar {
+     margin-top: 5px;
+     margin-bottom: 5px;
+     border-radius: 0;
+     height: 30px;
+}
+
+.progress-bar {
+     padding-top: 5px;
+}
+
+/*** Cause Detail ***/
+
+#cause-info {
+     background-color: #8C8C8C;
+     height: 50px;
+}
+
+#cause-info img {
+     padding-top: 11px;
+}
+
+#cause-info-description {
+     background-color: #ECECEC;
+     height: 50px;
+}
+
+#cause-info-description h5 {
+     color: #7A7A7A;
+}
+
+#cause-info-description span {
+     color: #F2784B;
+}
+
+#cause-url {
+     background-color: #D1D1D1;
+     height: 50px;
+}
+
+#cause-url img {
+     padding-top: 11px;
+}
+
+#cause-url-description {
+     background-color: white;
+     height: 50px;
+     padding-top: 15px;
+     border-bottom: 1px solid #D1D1D1;
+}

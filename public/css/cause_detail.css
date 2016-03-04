@@ -1,7 +1,100 @@
-.favorite-button {
-     color: #a6a6a6;
+.jumbotron {
+     height: 180px;
+     padding: 0px; 
+     margin-top: -15px;
+     margin-bottom: 0;
 }
 
-.favorite-button-active {
-     color: #000000;
+.causes-cost {
+     position: absolute; 
+     top:190px; 
+     right:8px;
+     font-size: 22px;
+     color: white;
+     text-align: right;
+}
+
+/*** Cause Actions ***/
+
+#cause-actions {
+     background-color: #D1D1D1;
+     padding: 0;
+     border-radius: 0;
+}
+
+#cause-actions .btn {
+	border-radius: 0;
+	height: 40px;
+}
+
+.add-button, .add-button.disabled, .add-button:disabled, .favorite-button, .add-button-favorites, .add-button-favorites.disabled, .add-button-favorites:disabled {
+     padding: 10px 10px;
+     border: none;
+     background-color: rgba(255,255,255,0.0);
+}
+
+.add-button, .add-button:focus, .add-button:hover, .add-button-favorites, .add-button-favorites:focus, .add-button-favorites:hover {
+     color: white;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     outline: 0 none;
+}
+
+.add-button.disabled, .add-button:disabled, .add-button-favorites.disabled, .add-button-favorites:disabled {
+     color: #57924A;
+}
+
+.favorite-button, .favorite-button:focus, .favorite-button:hover {
+     float: right;
+     color: white;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     outline: 0 none;
+}
+
+.favorite-button-active, .favorite-button-active:focus, .favorite-button-active:hover {
+     color: #F2784B;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     outline: 0 none;
+}
+
+/*** Cause Detail ***/
+
+#cause-info {
+     background-color: #8C8C8C;
+     height: 50px;
+}
+
+#cause-info img {
+     padding-top: 11px;
+}
+
+#cause-info-description {
+     background-color: #ECECEC;
+     height: 50px;
+}
+
+#cause-info-description h5 {
+     color: #7A7A7A;
+}
+
+#cause-info-description span {
+     color: #F2784B;
+}
+
+#cause-url {
+     background-color: #D1D1D1;
+     height: 50px;
+}
+
+#cause-url img {
+     padding-top: 11px;
+}
+
+#cause-url-description {
+     background-color: white;
+     height: 50px;
+     padding-top: 15px;
+     border-bottom: 1px solid #D1D1D1;
 }

@@ -25,12 +25,34 @@ body {
 }
 
 /*** NAV FOOTER ***/
-.my-nav-footer-btn {
-     font-size: 30px;
+.my-nav-footer-btn, .my-nav-footer-btn:focus {
+     font-size: 18px;
+     padding-left: 0;
+     padding-right: 0;
      padding-top: 10px;
-     padding-bottom: 5px;
-     border-radius: 0px;
-     color: #a6a6a6;
+     padding-bottom: 0;
+     border-radius: 0;
+     border: none;
+     border-top: 1px solid transparent;
+     border-color: #a6a6a6;
+     color: #8C8C8C;
+     background-color: white;
+}
+
+.my-nav-footer-btn p {
+     font-size: 11px;
+     color: #8C8C8C;
+}
+
+.my-nav-footer-btn.active, .my-nav-footer-btn:active {
+     background-color: white;
+     color: #F2784B;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+}
+
+.my-nav-footer-btn.active p, .my-nav-footer-btn:active p {
+     color: #F2784B;
 }
 
 /*** HOLDING PAGE ***/
@@ -41,4 +63,14 @@ body {
 
 .holding-warning-icon {
      font-size: 30px;
+}
+
+/*** MODAL STYLE ***/
+.modal-title {
+     color: #F2784B;
+}
+
+.modal-footer .btn-success, .modal-footer .btn-info {
+     background-color: #F2784B;
+     border-color: #F2784B;
 }

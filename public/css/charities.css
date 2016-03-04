@@ -1,22 +1,48 @@
 
-.causes-cost {
-     position: absolute;
-     bottom: 80px;
-     right: 20px;
-     text-align: right;
+/*** SEGMENT CONTROL ***/
+
+#btn_group_all, #btn_group_favorites {
+     background-color: white;
+     border-color: #F2784B;
+     color: #F2784B;
+     -webkit-box-shadow: none;
+     box-shadow: none;
 }
 
-.more-info {
-     font-style: italic;
-     font-size: 12px;
+#btn_group_all.active, #btn_group_all:active, #btn_group_favorites.active, #btn_group_favorites:active {
+     background-color: #F2784B;
+     border-color: #F2784B;
+     color: white;
+     -webkit-box-shadow: none;
+     box-shadow: none;
 }
 
-.more-info-icon {
-     font-size: 8px;
+#btn_group_favorites span {
+     font-size: 16px;
+}
+
+/*** DONATION BLOCKS ***/
+
+.col-xs-6, .col-md-3 {
+     padding-left: 2px;
+     padding-right: 2px;
+}
+
+.panel {
+     margin-bottom: 4px;
+     border-radius: 0;
+     border-color: #AAAAAA;
+}
+
+.panel .btn {
+     border-radius: 0;
+     height: 40px;
 }
 
 .causes-body, .causes-body-favorites {
-     height: 125px;
+     color: white;
+     height: 150px;
+     padding: 8px;
 }
 
 .causes-body:hover, .causes-body-favorites:hover {
@@ -24,10 +50,52 @@
      border: 1px solid lightblue;
 }
 
-.favorite-button {
-     color: #a6a6a6;
+.causes-cost {
+     position: absolute;
+     bottom: 40px;
+     right: 8px;
+     font-size: 18px;
+     text-align: right;
 }
 
-.favorite-button-active {
-     color: #000000;
+.more-info {
+     font-size: 14px;
+}
+
+.panel-footer {
+     background-color: rgba(255,255,255,0.7);
+     padding: 0;
+     border-radius: 0;
+}
+
+.add-button, .add-button.disabled, .add-button:disabled, .favorite-button, .add-button-favorites, .add-button-favorites.disabled, .add-button-favorites:disabled {
+     padding: 4px 10px;
+     border: none;
+     background-color: rgba(255,255,255,0.0);
+}
+
+.add-button, .add-button:focus, .add-button:hover, .add-button-favorites, .add-button-favorites:focus, .add-button-favorites:hover {
+     color: white;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     outline: 0 none;
+}
+
+.add-button.disabled, .add-button:disabled, .add-button-favorites.disabled, .add-button-favorites:disabled {
+     color: #57924A;
+}
+
+.favorite-button, .favorite-button:focus, .favorite-button:hover {
+     float: right;
+     color: white;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     outline: 0 none;
+}
+
+.favorite-button-active, .favorite-button-active:focus, .favorite-button-active:hover {
+     color: #F2784B;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     outline: 0 none;
 }
