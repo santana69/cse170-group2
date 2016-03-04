@@ -1,43 +1,66 @@
 
-/**** DONATION BLOCK (ACTIVE) TEXT****/
-.donation_block, .donation_block:link, .donation_block:hover, .donation_block:visited, .donation_block:active{
-     /*height: 120px;*/
-     color: black;
-     text-decoration: none;
+.jumbotron {
+     margin-top: -25px;
+     margin-bottom: 5px;
+     padding-top: 15px;
+     padding-bottom: 10px;
+     padding-left: 15px;
+     padding-right: 15px;
+     background-color: white;
 }
 
-/*.donation_block_disabled {
-     background-color: lightgray;
-}*/
-.testing-lh {
-     color: red;
-}
-.causes-cost {
-     position: absolute;
-     bottom: 95px;
-     right: 20px;
-     text-align: right;
+.jumbotron h4 {
+     color: #F2784B;
+     margin-top: 6px;
+     margin-bottom: 6px;
 }
 
-.donation-rate {
-     margin-top: -3px;
-     margin-bottom: -13px;
-     text-align: center;
+.jumbotron a {
+     float: right;
+     margin-top: 4px;
+     padding-top: 2px;
+     padding-bottom: 2px;
+     padding-left: 5px;
+     padding-right: 5px;
+     background-color: #D8D8D8;
+     border-color: #D8D8D8;
+}
+
+.jumbotron a:hover {
+     background-color: #B8B8B8;
+     border-color: #B8B8B8; 
+}
+
+.jumbotron a:focus {
+     background-color: #D8D8D8;
+     border-color: #D8D8D8;
+}
+
+.jumbotron p {
+     font-size: 14px;
+     margin-bottom: 0;
+}
+
+.col-xs-6, .col-md-3 {
+     padding-left: 2px;
+     padding-right: 2px;
+}
+
+.panel {
+     margin-bottom: 4px;
+     border-radius: 0;
+     border-color: #AAAAAA;
+}
+
+.panel .btn {
+     border-radius: 0;
      height: 50px;
 }
 
-.more-info {
-     font-style: italic;
-     font-size: 12px;
-
-}
-
-.more-info-icon {
-     font-size: 8px;
-}
-
 .my-causes-body {
+     color: white;
      height: 125px;
+     padding: 8px;
 }
 
 .my-causes-body:hover {
@@ -45,21 +68,107 @@
      border: 1px solid lightblue;
 }
 
-/*** DONATION BLOCK (DISABLED) TEXT ***/
-.empty-cause {
-     height: 158px;
-     text-align: center;
-     padding-top: 30px;
+.causes-cost {
+     position: absolute;
+     bottom: 90px;
+     right: 8px;
+     font-size: 18px;
+     text-align: right;
 }
 
-.empty-cause-icon {
-     font-size: 3rem;
-     color: #a6a6a6;
+.more-info {
+     font-size: 14px;
 }
 
-/*** DONATION BLOCK PRGORESS BAR ****/
+.panel-footer {
+     background-color: white;
+     padding-top: 5px;
+     padding-bottom: 0;
+     padding-left: 0;
+     padding-right: 0;
+}
+/*
+.more-info-icon {
+     font-size: 8px;
+}
+*/
+
+/*** DONATION BLOCK PROGRESS BAR ****/
+
 .my-progress-bar {
-     margin-bottom: 10px;
+     margin-bottom: 5px;
+     border-radius: 0;
+     height: 30px;
+}
+
+.progress-bar {
+     padding-top: 5px;
+}
+
+.money-saved {
+     padding-left: 4px;
+}
+
+/*** DONATION BLOCK COMPLETE ***/
+
+.donate-button, .donate-button:focus {
+     background-color: #F2784B;
+     color: white;
+     border-color: #F2784B;
+}
+
+.donate-button:hover {
+     background-color: #D9714B;
+     color: white;
+     border-color: #D9714B;
+}
+
+/*** DONATION BLOCK IN PROGRESS ***/
+
+.btn-md-center {
+     text-align: center;
+     padding: 6px 0;
+}
+
+.btn-choice, .btn-save {
+     border-left:none;
+}
+
+.btn-choice {
+     background-color: #D1D1D1;
+     border-color: #CCCCCC;
+     color: white;
+     font-size: 16px;
+}
+
+.btn-choice:hover {
+     border-color: #EEEEEE;
+}
+
+.btn-choice.active, .btn-choice:active{
+     background-color: white;
+     border-color: #EEEEEE;
+     color: #F2784B;
+     box-shadow: none;
+     -webkit-box-shadow: none;
+}
+
+.btn-save, .btn-save:focus{
+     background-color: #F2784B;
+     border-color: #F2784B;
+     color: white;
+}
+
+.btn-save:hover {
+     background-color: #D9714B;
+     color: white;
+     border-color: #D9714B;
+}
+
+.btn-save:disabled {
+     background-color: white;
+     border-color: white;
+     color: #7A7A7A;
 }
 
 .btn-circle {
@@ -81,7 +190,29 @@
      line-height: 1.42;
 }
 
-.jumbotron {
-     margin-top: -15px;
-     margin-bottom: 15px;
+/*** DONATION BLOCK EMPTY CAUSE ***/
+
+.well{
+     background-color: #DDDDDD;
+     border-radius: 0;
+}
+
+.empty-anchor:hover, .empty-anchor:focus {
+     text-decoration: none; 
+}
+
+.empty-cause {
+     height: 168px;
+     text-align: center;
+     padding-top: 30px;
+}
+
+.empty-cause-icon {
+     font-size: 3rem;
+     color: white;
+}
+
+.empty-cause p {
+     color: white;
+     font-size: 16px;
 }

@@ -1,22 +1,23 @@
-.causes-cost {
-     position: absolute;
-     bottom: 65px;
-     right: 20px;
-     text-align: right;
+.col-xs-6, .col-md-3 {
+     padding-left: 2px;
+     padding-right: 2px;
 }
 
-.more-info {
-     font-style: italic;
-     font-size: 12px;
-
+.panel {
+     margin-bottom: 4px;
+     border-radius: 0;
+     border-color: #AAAAAA;
 }
 
-.more-info-icon {
-     font-size: 8px;
+.panel .btn {
+     border-radius: 0;
+     height: 50px;
 }
 
 .my-causes-body {
+     color: white;
      height: 125px;
+     padding: 8px;
 }
 
 .my-causes-body:hover {
@@ -24,7 +25,38 @@
      border: 1px solid lightblue;
 }
 
-/*** DONATION BLOCK PRGORESS BAR ****/
+.causes-cost {
+     position: absolute;
+     bottom: 40px;
+     right: 8px;
+     font-size: 18px;
+     text-align: right;
+}
+
+.more-info {
+     font-size: 14px;
+}
+
+.panel-footer {
+     background-color: white;
+     padding-top: 5px;
+     padding-bottom: 0;
+     padding-left: 0;
+     padding-right: 0;
+}
+
+/*** DONATION BLOCK PROGRESS BAR ****/
+
 .my-progress-bar {
-     margin-bottom: 10px;
+     margin-bottom: 5px;
+     border-radius: 0;
+     height: 30px;
+}
+
+.progress-bar {
+     padding-top: 5px;
+}
+
+.money-saved {
+     padding-left: 4px;
 }

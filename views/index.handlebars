@@ -66,97 +66,100 @@
 	</div>
 
 	<div class="jumbotron">
-		<div class="container">
-			<h4>Hello, {{user.firstname}}</h4>
-			<p>Ready to make a change?</p>
-
-			<a href="/history" class="btn btn-info">View History</a>
-		</div>
+		<a href="/history" class="btn btn-sm btn-info">View History</a>
+		<h4>Hello, {{user.firstname}}</h4>
+		<p>Ready to make a change?</p>
+		<p>Save a little towards your causes everyday!</p>
 	</div>
 
-	<div class="bottom-background">
-		<div class="container">
-			
-			{{#if user.bank_account}}
-			<div class="row">
-				{{#each fullData.my_causes}}
-					{{#if charity}}
-					<div class="col-xs-6 col-md-3">
-						<div class="my-panel panel panel-default">
-							<div class="my-causes-body panel-body" id="cause{{@index}}">
-								{{#with charity}}
-								<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-								<h5 class="causes-cost">with ${{cost}}</h5>
-								{{/with}}
+	<div class="container">
+		
+		{{#if user.bank_account}}
+		<div class="row">
+			{{#each fullData.my_causes}}
+				{{#if charity}}
+				<div class="col-xs-6 col-md-3">
+					<div class="my-panel panel panel-default">
+						{{#with charity}}
+						<div class="my-causes-body panel-body" id="cause{{@index}}" style="background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0,0.6)), url({{image}}) center no-repeat; background-size: cover;">
+							
+							<p><strong>{{action}}</strong> {{description}}... <span class="more-info"><strong>more info</strong></span> <!--<span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span>--> </p>
+							<h5 class="causes-cost">${{cost}}</h5>
+							
+						</div>
+						{{/with}}
+						<div class="panel-footer">
+							<div class="my-progress-bar progress">
+		  						<div class="progress-bar progress-bar-{{color}} progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%; {{#if progress-empty}}color:black;{{/if}}">
+		  						<span class="money-saved">${{money_saved}}</span>
+		    					<span class="sr-only">Saved ${{money_saved}} so far</span>
+		  						</div>
 							</div>
-							<div class="panel-footer">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="my-progress-bar progress">
-					  						<div class="progress-bar progress-bar-{{color}} progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%; {{#if progress-empty}}color:black;{{/if}}">
-					  						${{money_saved}}
-					    					<span class="sr-only">Saved ${{money_saved}} so far</span>
-					  						</div>
-										</div>
-									</div>
+							{{#if finished}}
+							<div class="btn-group btn-group-justified" role="group" aria-label="...">
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-default donate-button">DONATE! 
+										:)</button>
 								</div>
-								{{#if finished}}
+							</div>
+							{{else}}
+
 								<div class="btn-group btn-group-justified" role="group" aria-label="...">
 									<div class="btn-group" role="group">
-										<button type="button" class="btn btn-sm btn-default donate-button">DONATE</button>
+										<button type="button" class="btn btn-default btn-choice btn-choice-1" value="0.25">25c</button>
+									</div>
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-default btn-choice btn-choice-2" value="1.00">$1</button>
+									</div>
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-default btn-info btn-md-center btn-save" disabled>SAVE</button>
 									</div>
 								</div>
-								{{else}}
 								<!--
-								<div class="donation-rate">
-									
-								</div>-->
-								<div class="row">
-									<div class="col-xs-3">
-										<button type="button" class="btn btn-default btn-circle btn-choice btn-choice-1" value="0.25">25c</button>
-									</div>
-									<div class="col-xs-3">
-										<button type="button" class="btn btn-default btn-circle btn-choice btn-choice-2" value="1.00">$1</button>
-									</div>
-									<div class="col-xs-6">
-										<div class="btn-group btn-group-justified" role="group" aria-label="...">
-											<div class="btn-group" role="group">
-												<button type="button" class="btn btn-default btn-info btn-sm-center btn-save" disabled>SAVE</button>
-											</div>
+								<div class="col-xs-3">
+									<button type="button" class="btn btn-default btn-circle btn-choice btn-choice-1" value="0.25">25c</button>
+								</div>
+								<div class="col-xs-3">
+									<button type="button" class="btn btn-default btn-circle btn-choice btn-choice-2" value="1.00">$1</button>
+								</div>
+								<div class="col-xs-6">
+									<div class="btn-group btn-group-justified" role="group" aria-label="...">
+										<div class="btn-group" role="group">
+											<button type="button" class="btn btn-default btn-info btn-sm-center btn-save" disabled>SAVE</button>
 										</div>
 									</div>
 								</div>
-								{{/if}}
-							</div>
+								-->
+							{{/if}}
 						</div>
 					</div>
-					{{else}}
-					<div class="col-xs-6 col-md-3">
-						<a href="/charities"> 
-							<div class="panel panel-default well well-sm">
-								<div class="panel-body">
-									<div class="empty-cause">
-										<span class="empty-cause-icon glyphicon glyphicon-plus" aria-hidden="true"></span>
-										<p>Add a cause to start saving!</p>
-									</div>
+				</div>
+				{{else}}
+				<div class="col-xs-6 col-md-3">
+					<a class="empty-anchor" href="/charities"> 
+						<div class="panel panel-default well well-sm">
+							<div class="panel-body">
+								<div class="empty-cause">
+									<span class="empty-cause-icon glyphicon glyphicon-plus" aria-hidden="true"></span>
+									<p>Add a new cause</p>
 								</div>
 							</div>
-						</a>
-					</div>
-					{{/if}}
-				{{/each}}
-			</div>
+						</div>
+					</a>
+				</div>
+				{{/if}}
+			{{/each}}
+		</div>
 
-			{{else}}
+		{{else}}
 
-			<h4>Bank Account Set Up:</h4>
-			
-			<p>You need to add a bank account in order to start saving towards the causes you care about.</p>
-			<p>After setting your account, you can go check out the <a href="/charities">causes</a> available for you to choose from.</p>
-			<p>Please, go to <a href="/settings">Settings</a> to add a bank account.</p>
+		<h4>Bank Account Set Up:</h4>
+		
+		<p>You need to add a bank account in order to start saving towards the causes you care about.</p>
+		<p>After setting your account, you can go check out the <a href="/charities">causes</a> available for you to choose from.</p>
+		<p>Please, go to <a href="/settings">Settings</a> to add a bank account.</p>
 
-			{{/if}}
-	  	</div>
+		{{/if}}
   	</div>
 
   	<!-- Footer Partial -->

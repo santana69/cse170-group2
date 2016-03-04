@@ -29,17 +29,17 @@ function initializePage() {
 			$(this).toggleClass("active");
 
 			//set save button disabled
-			$(this).closest('.row').find('.btn-save').attr('disabled', true);
+			$(this).closest('.btn-group-justified').find('.btn-save').attr('disabled', true);
 		}
 		else {
 			//not active, set active
 			$(this).toggleClass("active");
 
 			//remove active from other button (if applicable)
-			$(this).closest('.row').find('.btn-choice-2').removeClass('active');
+			$(this).closest('.btn-group-justified').find('.btn-choice-2').removeClass('active');
 
 			//set save button enabled
-			$(this).closest('.row').find('.btn-save').attr('disabled', false);
+			$(this).closest('.btn-group-justified').find('.btn-save').attr('disabled', false);
 		}
 	});
 
@@ -54,17 +54,17 @@ function initializePage() {
 			$(this).toggleClass("active");
 
 			//set save button disabled
-			$(this).closest('.row').find('.btn-save').attr('disabled', true);
+			$(this).closest('.btn-group-justified').find('.btn-save').attr('disabled', true);
 		}
 		else {
 			//not active, set active
 			$(this).toggleClass("active");
 
 			//remove active from other button (if applicable)
-			$(this).closest('.row').find('.btn-choice-1').removeClass('active');
+			$(this).closest('.btn-group-justified').find('.btn-choice-1').removeClass('active');
 
 			//set save button enabled
-			$(this).closest('.row').find('.btn-save').attr('disabled', false);
+			$(this).closest('.btn-group-justified').find('.btn-save').attr('disabled', false);
 		}
 	});
 

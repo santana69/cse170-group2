@@ -5,6 +5,10 @@ body {
      padding-bottom: 60px;
 }
 
+.navbar-default {
+     background-color: #F6F6F6;
+}
+
 .navbar-brand-centered {
      position: absolute;
      left: 50%;
@@ -12,6 +16,7 @@ body {
      width: 200px;
      text-align: center;
      background-color: transparent;
+     color : #F2784B !important;
 }
 
 .navbar > .container .navbar-brand-centered,

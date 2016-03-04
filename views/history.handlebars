@@ -34,22 +34,20 @@
 				{{#each fullData.history}}
 				<div class="col-xs-6 col-md-3">
 					<div class="my-panel panel panel-default">
-						<div class="my-causes-body panel-body" id="cause{{@index}}">
-							{{#with charity}}
-							<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </p>
-							<h5 class="causes-cost">with ${{cost}}</h5>
-							{{/with}}
+						{{#with charity}}
+						<div class="my-causes-body panel-body" id="cause{{@index}}" style="background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0,0.6)), url({{image}}) center no-repeat; background-size: cover;">
+							
+							<p><strong>{{action}}</strong> {{description}}... <span class="more-info">more info</span> <!--<span class="more-info-icon glyphicon glyphicon-arrow-right" aria-hidden="true"></span>--> </p>
+							<h5 class="causes-cost">${{cost}}</h5>
+							
 						</div>
+						{{/with}}
 						<div class="panel-footer">
-							<div class="row">
-								<div class="col-xs-12">
-									<div class="my-progress-bar progress">
-				  						<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-				  						COMPLETED
-				    					<span class="sr-only">COMPLETED</span>
-				  						</div>
-									</div>
-								</div>
+							<div class="my-progress-bar progress">
+		  						<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+		  						COMPLETED
+		    					<span class="sr-only">COMPLETED</span>
+		  						</div>
 							</div>
 						</div>
 					</div>
