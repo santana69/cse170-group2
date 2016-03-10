@@ -88,3 +88,25 @@ exports.attemptSignUp = function(req, res) {
 
 	//res.redirect('/');
 };
+
+exports.checkEmailExists = function(req, res) {
+	console.log("email: "+req.body.email);
+
+	//Check if email already exists for bootstrapValidator
+	models.User
+		.findOne({
+			"email" : req.body.email,
+			"enabled" : true
+		})
+		.exec(function(err, user) {
+			if (user || err) {
+
+				//Send success
+				res.json({"valid" : false});
+			}
+			else {
+				//Send success
+				res.json({"valid" : true});
+			}
+		});
+};

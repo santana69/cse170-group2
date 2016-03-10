@@ -9,6 +9,13 @@
 
 	<!-- Custom CSS for this page -->
 	<link href="/css/createacct.css" rel="stylesheet">
+
+	<style>
+		/* override error color of bootstrapValidator */
+		.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .help-block {
+			color: #FF9900;
+		}
+	</style>
 </head>
 
 <body>
@@ -25,19 +32,33 @@
 					<!--<form class="form-horizontal" method="post" action="/createacct">-->
 					<form id="formSignup" class="form-horizontal">
 						<div class="form-group">
-						    <input type="text" class="form-control input-sm my-input" name="firstname" id="firstname" placeholder="Firstname">
+						    <input type="text" class="form-control input-sm my-input" name="firstname" id="firstname" placeholder="Firstname" autofocus
+						    required
+						    data-bv-notempty-message="Firstname cannot be empty">
 						</div>
 						<div class="form-group">
-						    <input type="text" class="form-control input-sm my-input" name="lastname" id="lastname" placeholder="Lastname">
+						    <input type="text" class="form-control input-sm my-input" name="lastname" id="lastname" placeholder="Lastname"
+						    required
+						    data-bv-notempty-message="Lastname cannot be empty">
 						</div>
 						<div class="form-group">
-						    <input type="email" class="form-control input-sm my-input" name="email" id="email" placeholder="Email">
+						    <input type="email" class="form-control input-sm my-input" name="email" id="email" placeholder="Email"
+						    required
+						    data-bv-emailaddress-message="Not a valid email address"
+						    data-bv-notempty-message="Email cannot be empty"
+						    data-bv-remote="true" data-bv-remote-url="/createacct/checkEmailExists" data-bv-remote-message="Email already in use by another user">
 						</div>
 						<div class="form-group">
-						    <input type="password" class="form-control input-sm my-input" name="password" id="password" placeholder="Password">
+						    <input type="password" class="form-control input-sm my-input" name="password" id="password" placeholder="Password"
+						    required
+						    data-bv-notempty-message="Password cannot be empty"
+						    data-bv-identical="true" data-bv-identical-field="confirmPassword" data-bv-identical-message="Password and Confirm Password don't match">
 						</div>
 						<div class="form-group">
-						    <input type="password" class="form-control input-sm my-input" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+						    <input type="password" class="form-control input-sm my-input" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
+						    required
+						    data-bv-notempty-message="Confirm password cannot be empty"
+						    data-bv-identical="true" data-bv-identical-field="password" data-bv-identical-message="Password and Confirm Password don't match">
 						</div>
 						<!--
 						<div class="form-group">
@@ -58,6 +79,13 @@
 						<!--<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
 						<strong>Oops!</strong> A user already exists with the given email.
 					</div>
+
+					<form class="form-horizontal">
+						<div class="form-group">
+							<hr></hr>
+							<a id="backToLogin" type="button" class="btn btn-link center-block" href="/login">Back to LOGIN</a>
+						</div>
+					</form>
 				</div>
 		  	</div>
 	  	</div>
@@ -68,9 +96,15 @@
 	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
 	<script src="/js/bootstrap.min.js"></script>
 
+	<!-- PLUGINS JS -->
+	<script src="/plugins/validator/bootstrapValidator.min.js"></script>
+
 	{{> googleAnalytics}}
 	
 	<!-- Our custom js -->
 	<script src="/js/createacct.js"></script>
+	<script>
+		$('#formSignup').bootstrapValidator();
+	</script>
 </body>
 </html>

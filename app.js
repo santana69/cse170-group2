@@ -536,6 +536,7 @@ app.post('/settings/addBankAccount', requireLogin, settings.addBankAccount);
 app.get('/settings/deleteBankAccount', requireLogin, settings.deleteBankAccount);
 
 app.post('/createacct/attemptSignUp', createacct.attemptSignUp);
+app.post('/createacct/checkEmailExists', createacct.checkEmailExists);
 
 app.post('/login/attemptLogin', login.attemptLogin);
 
