@@ -19,66 +19,68 @@
 </head>
 
 <body>
-	<div id="bg-img" class="bg-effect"></div>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				<img src="/images/logo.png" class="logo center-block">
-				<p class="tagline text-center">Start small. Make a big difference.</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-8 col-xs-offset-2">
-				<div class="signin-form">
-					<!--<form class="form-horizontal" method="post" action="/">-->
-					<form class="form-horizontal" id="formLogin">
-
-						<div class="form-group">
-						    <input type="email" class="form-control input-sm my-input" name="email" id="email" placeholder="Email" autofocus
-						    required
-						    data-bv-emailaddress-message="Not a valid email address"
-						    data-bv-notempty-message="Email cannot be empty">
-						</div>
-						<div class="form-group">
-						    <input type="password" class="form-control input-sm my-input" name="password" id="password" placeholder="Password"
-						    required
-						    data-bv-notempty-message="Type in your password">
-						</div>
-						<!--
-						<div class="form-group">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox"> Remember me
-								</label>
-							</div>
-						</div>
-						-->
-						<div class="form-group">
-						    <!--<button type="submit" class="my-btn sign-in-style btn btn-info center-block">Sign in</button>-->
-						    <button type="submit" class="my-btn sign-in-style btn btn-info center-block">Sign in</button>
-						</div>
-					</form>
-
-					<div id="errorMessage" class="alert alert-danger alert-dismissible" role="alert" hidden>
-						<!--<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-						<strong>Oops!</strong> We could not find a user with the given email and/or password.
-					</div>
-
-					<form class="form-horizontal">
-						<div class="form-group">
-							<hr></hr>
-							<p class="text-center">Don't have an account?</p>
-							<a type="button" class="my-btn sign-up-style btn btn-info center-block" href="/createacct">Create an Account</a>
-						</div>
-						<!--
-						<div class="form-group">
-						    <a href="#"><p class="carity-info text-center">What is Carity?</p></a>
-						</div>
-						-->
-					</form>
+	<div id="wrapper_container">
+		<div id="bg-img" class="bg-effect"></div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<img src="/images/logo.png" class="logo center-block">
+					<p class="tagline text-center">Start small. Make a big difference.</p>
 				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<div class="signin-form">
+						<!--<form class="form-horizontal" method="post" action="/">-->
+						<form class="form-horizontal" id="formLogin">
+
+							<div class="form-group">
+							    <input type="email" class="form-control input-sm my-input" name="email" id="email" placeholder="Email" autofocus
+							    required
+							    data-bv-emailaddress-message="Not a valid email address"
+							    data-bv-notempty-message="Email cannot be empty">
+							</div>
+							<div class="form-group">
+							    <input type="password" class="form-control input-sm my-input" name="password" id="password" placeholder="Password"
+							    required
+							    data-bv-notempty-message="Type in your password">
+							</div>
+							<!--
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> Remember me
+									</label>
+								</div>
+							</div>
+							-->
+							<div class="form-group">
+							    <!--<button type="submit" class="my-btn sign-in-style btn btn-info center-block">Sign in</button>-->
+							    <button type="submit" class="my-btn sign-in-style btn btn-info center-block">Sign in</button>
+							</div>
+						</form>
+
+						<div id="errorMessage" class="alert alert-danger alert-dismissible" role="alert" hidden>
+							<!--<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+							<strong>Oops!</strong> We could not find a user with the given email and/or password.
+						</div>
+
+						<form class="form-horizontal">
+							<div class="form-group">
+								<hr></hr>
+								<p class="text-center">Don't have an account?</p>
+								<a type="button" class="my-btn sign-up-style btn btn-info center-block" href="/createacct">Create an Account</a>
+							</div>
+							<!--
+							<div class="form-group">
+							    <a href="#"><p class="carity-info text-center">What is Carity?</p></a>
+							</div>
+							-->
+						</form>
+					</div>
+			  	</div>
 		  	</div>
-	  	</div>
+		</div>
 	</div>
   	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
