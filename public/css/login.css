@@ -1,17 +1,14 @@
 @media only screen and (max-width: 960px) {
-	html{
-		width: 100%;
-  		height: 100%;
+	html, body {
+	    width: 100%;
+	    height: 100%;
+	    overflow: hidden;
 	}
-	body {
-		min-width: 100%;
-	 	min-height: 100%;
-	 	overflow:hidden;
-	}
-	#wrapper_container {
+	body > #wrapper_container {
 		width: 100%;
 	 	height: 100%;
-	 	overflow:hidden;
+	 	overflow: hidden;
+   		-webkit-overflow-scrolling: touch;
 	}
 	#bg-img {
 		position: fixed;
