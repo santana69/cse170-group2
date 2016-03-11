@@ -92,6 +92,22 @@
 		</div>
 	</div>
 
+	<div class="modal fade" id="cannotTransferToBankForActiveCausesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Transfer to Bank</h4>
+				</div>
+				<div class="modal-body">
+					You have active causes, you cannot transfer at this time. If you wish to transfer, please go to <a href="/">MyCauses</a> and either finish donating to your current causes or delete them.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modal fade" id="cannotDeleteBankAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -181,7 +197,9 @@
 
 			</div>
 			<div class="col-xs-12">
-				<button style="padding:6px 0; color:red;" class="btn btn-link pull-right" data-toggle="modal" data-target="#{{#if user.balance}}cannotDelete{{else}}delete{{/if}}BankAccountModal">Delete Account</button>
+				<button style="padding:6px 0; color:red;" class="btn btn-link pull-right" data-toggle="modal" 
+				data-target="#{{#if user.balance}}cannotDelete{{else}}delete{{/if}}BankAccountModal"
+				>Delete Account</button>
 			</div>
 		</div>
 
@@ -212,7 +230,9 @@
 				<h5 class="pull-right">${{#if user.balance}}{{user.balance}}{{else}}0.00{{/if}}</h5>
 			</div>
 			<div class="col-xs-12">
-				<button style="padding:0;" class="btn btn-link pull-right" data-toggle="modal" data-target="#{{#if user.balance}}transfer{{else}}cannotTransfer{{/if}}ToBankModal">Transfer to Bank</button>
+				<button style="padding:0;" class="btn btn-link pull-right" data-toggle="modal" 
+				data-target="#{{#if user.balance}}{{#if active_causes}}cannotTransferToBankForActiveCausesModal{{else}}transferToBankModal{{/if}}{{else}}cannotTransferToBankModal{{/if}}"
+				>Transfer to Bank</button>
 			</div>
 		</div>
 

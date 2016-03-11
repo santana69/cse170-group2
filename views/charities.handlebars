@@ -92,6 +92,23 @@
 		</div>
 	</div>
 
+	<div class="modal fade" id="noBankAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">No Bank Account Setup</h4>
+				</div>
+				<div class="modal-body">
+					You need to setup a bank account before adding causes.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+					<a type="button" class="btn btn-info" href="/settings">Take me there</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container">
 		
 		<div class="row">
@@ -132,6 +149,11 @@
 							{{#if my_cause}}
 								disabled
 							{{/if}}
+
+							{{#unless ../user.bank_account}}
+							data-toggle="modal"
+							data-target="#noBankAccountModal"
+							{{/unless}}
 						>
 							<span 
 								class="glyphicon 
@@ -164,7 +186,7 @@
 			{{#if empty}}
 			<div class="col-xs-12">
 				<h5>You haven't added any causes to your favorites. </h5>
-				<p>Go to All Charities list and click on the heart on a cause you like so you can save it for later and easily find it when you're ready to start saving for it.</p>
+				<p>Go to All Causes list and click on the heart on a cause you like so you can save it for later and easily find it when you're ready to start saving for it.</p>
 			</div>
 
 			{{else}}
@@ -187,6 +209,12 @@
 							{{#if my_cause}}
 								disabled
 							{{/if}}
+
+							{{#unless ../user.bank_account}}
+							data-toggle="modal"
+							data-target="#noBankAccountModal"
+							{{/unless}}
+
 						>
 							<span 
 								class="glyphicon 
@@ -229,6 +257,9 @@
 	{{> googleAnalytics}}
 	
 	<!-- Our custom js -->
+	<script>
+		var hasBankAccount = {{#if user.bank_account}}true{{else}}false{{/if}};
+	</script>
 	<script src="/js/charities.js"></script>
 </body>
 </html>

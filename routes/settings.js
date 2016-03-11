@@ -4,8 +4,23 @@
 var models = require('../models');
 
 exports.view = function(req, res) {    
+
+	//check if causes active
+	var fullData = req.fullData;
+
+	var size = fullData.my_causes.length;
+	var active = false;
+	for (var i=0; i<size; ++i) {
+		if (fullData['my_causes'][i].hasOwnProperty('charity'))	{
+			//found an active cause.
+			active = true;
+			break;
+		}
+	}
+
 	res.render('settings', {
-		"page_settings" : 1
+		"page_settings" : 1,
+		"active_causes" : active
 	});
  }
 
